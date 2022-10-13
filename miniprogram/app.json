@@ -1,0 +1,27 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/password/password",
+        "pages/passwordAdd/password"
+    ],
+    "window": {
+        "backgroundColor": "#F6F6F6",
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#F6F6F6",
+        "navigationBarTitleText": "密码箱",
+        "navigationBarTextStyle": "black"
+    },
+    "sitemapLocation": "sitemap.json",
+    "style": "v2",
+    "lazyCodeLoading": "requiredComponents",
+    "usingComponents": {
+        "l-button": "/miniprogram_npm/lin-ui/button/index",
+        "l-input": "/miniprogram_npm/lin-ui/input/index",
+        "l-popup": "/miniprogram_npm/lin-ui/popup/index",
+        "l-collapse": "/miniprogram_npm/lin-ui/collapse/index",
+        "l-collapse-item": "/miniprogram_npm/lin-ui/collapse-item/index",
+        "l-form": "/miniprogram_npm/lin-ui/form/index",
+        "l-form-item": "/miniprogram_npm/lin-ui/form-item/index",
+        "l-icon": "/miniprogram_npm/lin-ui/icon/index"
+    }
+}
