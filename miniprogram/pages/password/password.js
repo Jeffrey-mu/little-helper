@@ -98,5 +98,21 @@ Page({
                 passwordList: res.result.data
             })
         })
+    },
+    handleDel(event) {
+        console.log(event.currentTarget.dataset.id);
+        wx.cloud.callFunction({
+            name: 'quickstartFunctions',
+            config: {
+                env: this.data.envId
+            },
+            data: {
+                type: 'passwordDel',
+                id: event.currentTarget.dataset.id
+            }
+        }).then(res => {
+            console.log(res)
+           this.queryPasswordList()
+        })
     }
 })

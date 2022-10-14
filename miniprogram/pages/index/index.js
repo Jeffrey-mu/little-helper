@@ -21,7 +21,6 @@ Page({
                 type: 'getOpenId'
             }
         }).then((resp) => {
-            console.log(resp)
         })
     },
 

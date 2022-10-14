@@ -6,10 +6,10 @@
     ],
     "window": {
         "backgroundColor": "#F6F6F6",
-        "backgroundTextStyle": "light",
-        "navigationBarBackgroundColor": "#F6F6F6",
+        "backgroundTextStyle": "dark",
+        "navigationBarBackgroundColor": "#3963bc",
         "navigationBarTitleText": "密码箱",
-        "navigationBarTextStyle": "black"
+        "navigationBarTextStyle": "white"
     },
     "sitemapLocation": "sitemap.json",
     "style": "v2",
@@ -22,6 +22,7 @@
         "l-collapse-item": "/miniprogram_npm/lin-ui/collapse-item/index",
         "l-form": "/miniprogram_npm/lin-ui/form/index",
         "l-form-item": "/miniprogram_npm/lin-ui/form-item/index",
-        "l-icon": "/miniprogram_npm/lin-ui/icon/index"
+        "l-icon": "/miniprogram_npm/lin-ui/icon/index",
+        "l-card": "/miniprogram_npm/lin-ui/card/index"
     }
 }

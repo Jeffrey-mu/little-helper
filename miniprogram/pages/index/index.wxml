@@ -3,5 +3,5 @@
     <text>欢迎来到密码箱</text>
 </view>
 <view class="flex">
-    <l-button bindtap="goto">进入我的密码箱</l-button>
+    <l-button shape="semicircle" width="700" bindtap="goto">进入我的密码箱</l-button>
 </view>

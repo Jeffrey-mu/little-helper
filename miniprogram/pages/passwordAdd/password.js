@@ -89,7 +89,8 @@ Page({
                 }
             }
         }).then(res => {
-            if(res.result.sussess) {
+          
+            if(res.result.success) {
                 wx.navigateBack()
             }
         })

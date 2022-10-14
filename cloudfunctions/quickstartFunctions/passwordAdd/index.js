@@ -8,8 +8,6 @@ const db = cloud.database();
 
 // 创建集合云函数入口函数
 exports.main = async (event, context) => {
-  console.log(event)
-  console.log(context)
   try {
     const wxContext = cloud.getWXContext();
     const {add} = event;

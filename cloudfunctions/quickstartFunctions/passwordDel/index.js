@@ -10,5 +10,6 @@ exports.main = async (event, context) => {
     const wxContext = cloud.getWXContext();
     return await db.collection('password').where({
       openid: wxContext.OPENID,
-    }).get();
+      _id: event.id
+    }).remove()
 };
