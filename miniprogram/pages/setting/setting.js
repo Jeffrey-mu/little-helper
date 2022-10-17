@@ -1,4 +1,4 @@
-// miniprogram/pages/index/index.js
+// miniprogram/pages/setting/setting.js
 Page({
 
     /**
@@ -12,16 +12,7 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        wx.cloud.callFunction({
-            name: 'quickstartFunctions',
-            config: {
-                env: this.data.envId
-            },
-            data: {
-                type: 'getOpenId'
-            }
-        }).then((resp) => {
-        })
+
     },
 
     /**
@@ -71,10 +62,5 @@ Page({
      */
     onShareAppMessage: function () {
 
-    },
-    goto() {
-        wx.switchTab({
-          url: '/pages/password/password',
-        })
     }
 })

@@ -1,6 +1,8 @@
 {
     "pages": [
         "pages/index/index",
+        "pages/setPassword/index",
+        "pages/setting/setting",
         "pages/password/password",
         "pages/passwordAdd/password"
     ],
@@ -10,6 +12,25 @@
         "navigationBarBackgroundColor": "#3963bc",
         "navigationBarTitleText": "密码箱",
         "navigationBarTextStyle": "white"
+    },
+    "tabBar": {
+        "color": "#333333",
+        "selectedColor": "#3963bc",
+        "backgroundColor": "#ffffff",
+        "list": [
+            {
+                "pagePath": "pages/password/password",
+                "text": "密码",
+                "iconPath": "images/db.png",
+                "selectedIconPath": "images/dba.png"
+            },
+            {
+                "pagePath": "pages/setting/setting",
+                "text": "设置",
+                "iconPath": "images/set.png",
+                "selectedIconPath": "images/seta.png"
+            }
+        ]
     },
     "sitemapLocation": "sitemap.json",
     "style": "v2",
@@ -23,6 +44,11 @@
         "l-form": "/miniprogram_npm/lin-ui/form/index",
         "l-form-item": "/miniprogram_npm/lin-ui/form-item/index",
         "l-icon": "/miniprogram_npm/lin-ui/icon/index",
-        "l-card": "/miniprogram_npm/lin-ui/card/index"
+        "l-card": "/miniprogram_npm/lin-ui/card/index",
+        "l-grid-item": "/miniprogram_npm/lin-ui/grid-item/index",
+        "l-grid": "/miniprogram_npm/lin-ui/grid/index",
+        "l-sticky": "/miniprogram_npm/lin-ui/sticky/index",
+        "l-notice-bar": "/miniprogram_npm/lin-ui/notice-bar/index",
+        "l-sticky-item": "/miniprogram_npm/lin-ui/sticky-item/index"
     }
 }

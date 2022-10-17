@@ -1,0 +1,24 @@
+/* miniprogram/pages/setPassword/index.wxss */
+.inline {
+    display: inline;
+}
+.flex {
+    display: flex;
+    justify-content: space-evenly;
+}
+.l-form-btn-class{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10rpx;
+}
+.password_box {
+ background-color: #ffffff;
+ padding: 30rpx;
+ border-radius: 10rpx;
+}
+.title {
+    text-align: center;
+}
+view {
+    font-size: 30rpx;
+}

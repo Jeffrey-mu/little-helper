@@ -6,6 +6,8 @@ const updateRecord = require('./updateRecord/index');
 const sumRecord = require('./sumRecord/index');
 const passwordAdd = require('./passwordAdd/index');
 const passwordQuery = require('./passwordQuery/index');
+const userPasswordQuery = require('./userPasswordQuery/index');
+const userPasswordAdd = require('./userPasswordAdd/index');
 
 
 // 云函数入口函数
@@ -27,5 +29,9 @@ exports.main = async (event, context) => {
       return await passwordAdd.main(event, context);
     case 'passwordQuery':
       return await passwordQuery.main(event, context);
+    case 'userPasswordQuery':
+      return await userPasswordQuery.main(event, context);
+    case 'userPasswordAdd':
+      return await userPasswordAdd.main(event, context);
   }
 };

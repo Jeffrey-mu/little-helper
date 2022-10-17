@@ -1,0 +1,18 @@
+<!--miniprogram/pages/setPassword/index.wxml-->
+<view class="password_box" wx:if="{{showForm}}">
+    <l-form name="password" l-form-btn-class="l-form-btn-class" bind:linsubmit="submit" bind:linreset="handleCancel">
+        <l-form-item wx:if="{{ type !== 1 }}" label="旧密码:" name="oldPassword">
+            <l-input id="oldPassword" value="{{password.oldPassword}}" hide-label show-row="{{false}}" />
+        </l-form-item>
+        <l-form-item label="密 码:" name="password">
+            <l-input id="password" value="{{password.password}}" hide-label show-row="{{false}}" />
+        </l-form-item>
+
+        <view slot="submit">
+            <l-button>{{ type === 1 ? '添加密码' : '修改密码' }}</l-button>
+        </view>
+        <view slot="reset">
+            <l-button type="default" plain>取消</l-button>
+        </view>
+    </l-form>
+</view>

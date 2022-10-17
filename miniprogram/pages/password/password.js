@@ -16,6 +16,8 @@ Page({
             age: '',
             address: ''
         },
+        showData: false,
+        scrollTop: undefined
     },
     /**
      * 生命周期函数--监听页面加载
@@ -112,7 +114,36 @@ Page({
             }
         }).then(res => {
             console.log(res)
-           this.queryPasswordList()
+            this.queryPasswordList()
         })
-    }
+    },
+    onPageScroll(res) {
+        this.setData({
+            scrollTop: res.scrollTop
+        })
+    },
+    inputEvent(e) {
+        let password = e.detail.value;
+        this.queryPassword(password)
+    },
+    queryPassword(password) {
+        wx.cloud.callFunction({
+            name: 'quickstartFunctions',
+            config: {
+                env: this.data.envId
+            },
+            data: {
+                // type: 'userPasswordQuery',
+                type: 'userPasswordQuery',
+                password
+            }
+        }).then(res => {
+            console.log(res)
+            if (res.result.data.length) {
+                this.setData({
+                    showData: true
+                })
+            }
+        })
+    },
 })

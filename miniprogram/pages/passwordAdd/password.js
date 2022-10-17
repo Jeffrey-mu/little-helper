@@ -9,7 +9,7 @@ Page({
             id: '',
             password: '',
             dis: ''
-          },
+        },
     },
     /**
      * 生命周期函数--监听页面加载
@@ -66,15 +66,23 @@ Page({
     onShareAppMessage: function () {
 
     },
-    handleAdd(){
-       
+    handleAdd() {
+
     },
-    handleCancel(){
-       wx.navigateBack()
+    handleCancel() {
+        wx.navigateBack()
     },
-    submit(event){
-        const {detail} = event;
-        console.log(detail)
+    submit(event) {
+        const {
+            detail
+        } = event;
+        if ( !detail.values.id ||  !detail.values.password ) {
+            wx.showToast({
+              title: '账号密码不可为空！',
+              icon: 'none'
+            })
+            return
+        }
         wx.cloud.callFunction({
             name: 'quickstartFunctions',
             config: {
@@ -89,10 +97,19 @@ Page({
                 }
             }
         }).then(res => {
-          
-            if(res.result.success) {
-                wx.navigateBack()
+
+            if (res.result.success) {
+                wx.showModal({
+                    title: '成功！',
+                    content: '数据添加成功！',
+                    showCancel: false,
+                    success(res) {
+                        if (res.confirm) {
+                            wx.navigateBack()
+                        }
+                    }
+                })
             }
         })
-      },
+    },
 })
