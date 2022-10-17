@@ -167,6 +167,9 @@ Page({
             this.setData({
                 showForm: true
             })
+            setTimeout(() => {
+                wx.lin.initValidateForm(this)
+            })
         })
     },
 })
