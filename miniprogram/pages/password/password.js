@@ -124,6 +124,13 @@ Page({
     },
     inputEvent(e) {
         let password = e.detail.value;
+        if (!password) {
+            wx.showToast({
+              title: '请输入密码！',
+              icon: 'none'
+            })
+            return
+        }
         this.queryPassword(password)
     },
     queryPassword(password) {

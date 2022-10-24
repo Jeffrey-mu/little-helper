@@ -4,13 +4,14 @@
         "pages/setPassword/index",
         "pages/setting/setting",
         "pages/password/password",
-        "pages/passwordAdd/password"
+        "pages/passwordAdd/password",
+        "pages/luckDraw/index"
     ],
     "window": {
         "backgroundColor": "#F6F6F6",
         "backgroundTextStyle": "dark",
         "navigationBarBackgroundColor": "#3963bc",
-        "navigationBarTitleText": "密码箱",
+        "navigationBarTitleText": "安全密码箱",
         "navigationBarTextStyle": "white"
     },
     "tabBar": {
@@ -23,6 +24,12 @@
                 "text": "密码",
                 "iconPath": "images/db.png",
                 "selectedIconPath": "images/dba.png"
+            },
+            {
+                "pagePath": "pages/luckDraw/index",
+                "text": "抽奖",
+                "iconPath": "images/draw.png",
+                "selectedIconPath": "images/drawa.png"
             },
             {
                 "pagePath": "pages/setting/setting",
@@ -49,6 +56,9 @@
         "l-grid": "/miniprogram_npm/lin-ui/grid/index",
         "l-sticky": "/miniprogram_npm/lin-ui/sticky/index",
         "l-notice-bar": "/miniprogram_npm/lin-ui/notice-bar/index",
-        "l-sticky-item": "/miniprogram_npm/lin-ui/sticky-item/index"
+        "l-sticky-item": "/miniprogram_npm/lin-ui/sticky-item/index",
+        "lucky-wheel": "/miniprogram_npm/@lucky-canvas/mini/lucky-wheel/index",
+        "lucky-grid": "/miniprogram_npm/@lucky-canvas/mini/lucky-grid/index",
+        "slot-machine": "/miniprogram_npm/@lucky-canvas/mini/slot-machine/index"
     }
 }

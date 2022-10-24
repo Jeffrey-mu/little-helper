@@ -1,4 +1,4 @@
-const cloud = require('wx-server-sdk');
+~const cloud = require('wx-server-sdk');
 
 cloud.init({
   env: cloud.DYNAMIC_CURRENT_ENV
@@ -7,9 +7,9 @@ cloud.init({
 const db = cloud.database();
 
 exports.main = async (event, context) => {
-    const wxContext = cloud.getWXContext();
-    return await db.collection('password').where({
-      openid: wxContext.OPENID,
-      _id: event.id
-    }).remove()
+  const wxContext = cloud.getWXContext();
+  return await db.collection('password').where({
+    openid: wxContext.OPENID,
+    _id: event.id
+  }).remove()
 };
