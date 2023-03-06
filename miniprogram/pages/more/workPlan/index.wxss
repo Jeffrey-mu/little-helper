@@ -1,0 +1,61 @@
+/* miniprogram/pages/more/workPlan/index.wxss */
+.workplan_content {
+    padding: 4rpx 0;
+    text-align: center;
+    position: relative;
+    background: #eee;
+    height: 100vh;
+}
+
+.workPlanCard,
+.workPlanEdit {
+    position: relative;
+    padding: 10px;
+    width: 650rpx;
+    margin: 10rpx auto;
+    margin-bottom: 40rpx;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 20rpx 20rpx 60rpx #d5d5d5, -20rpx -20rpx 60rpx #ffffff;
+}
+
+.title {
+    margin: 10rpx 0;
+    font-size: 30rpx;
+    font-weight: 600;
+}
+
+.content_list {
+    text-align: left;
+    margin-bottom: 10rpx;
+}
+
+.input {
+    flex: 1;
+    height: 60rpx;
+    font-size: 32rpx;
+    color: #333333;
+    padding: 0 20rpx;
+    border: 1px solid #cccccc;
+    border-radius: 10rpx;
+    margin-right: 20rpx;
+}
+
+.flex {
+    display: flex;
+}
+
+.del {
+    background-color: red;
+    color: #fff;
+    width: 50rpx;
+    margin: 10rpx;
+}
+
+.copyEvent {
+    position: absolute;
+    top: 10rpx;
+    right: 30rpx;
+    color: rgb(44, 215, 221);
+    font-style: italic;
+}

@@ -1,0 +1,27 @@
+<!--pages/luckDraw/index.wxml-->
+<view style="margin:10rpx" class="top_btn" wx:if="{{show}}">
+  " <text>{{value}}</text> "
+</view>
+
+<view class="box" wx:if="{{show}}">
+    <lucky-wheel id="myLucky" width="700rpx" height="700rpx" blocks="{{blocks}}" prizes="{{prizes}}"
+        buttons="{{buttons}}" bindstart="start" bindend="end" />
+</view>
+<view wx:else class="page">
+  <view class="header">
+    <input class="input" placeholder="输入新列表项" bindinput="inputChange" value="{{inputValue}}"></input>
+    <view class="add" bindtap="addItem">添加</view>
+  </view>
+  <view class="list">
+    <block wx:for="{{items}}" wx:key="index">
+      <view class="item">
+        <view class="index">{{index+1}}</view>
+        <view class="label">{{item.label}}</view>
+        <view class="delete" bindtap="deleteItem" data-index="{{index}}">删除</view>
+      </view>
+    </block>
+  </view>
+</view>
+<view class="operate_btn">
+  <l-button width="700" shape="semicircle" bindtap="showAdd">{{show ? '添加' : '确定'}}</l-button>
+</view>

@@ -1,4 +1,3 @@
-<!--miniprogram/pages/index/index.wxml-->
 <!--miniprogram/pages/more/index.wxml-->
 <view class="more">
     <navigator url="/pages/more/workPlan/index" hover-class="navigator-hover" class="more_item">
@@ -10,7 +9,7 @@
     <navigator url="/pages/more/select/index" hover-class="navigator-hover" class="more_item">
         <image src="/images/select.png" alt=""></image>
         <view>
-            帮你选
+            吃什么
         </view>
     </navigator>
     <view class="more_item">
@@ -26,6 +25,3 @@
         </view>
     </view>
 </view>
-<!-- <view class="flex">
-    <l-button shape="semicircle" width="700" bindtap="goto">进入我的密码箱</l-button>
-</view> -->

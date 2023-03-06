@@ -1,0 +1,22 @@
+<view class="workplan_content">
+    <view class="workPlanCard">
+        <view class="title">工作计划</view>
+        <view bindtap="copyEvent" class="copyEvent"> 
+            copy
+        </view>
+        <view class="content_list">
+            {{title}}
+        </view>
+        <view class="content_list" wx:for="{{workList}}" wx:for-item="item" wx:key="index">
+            {{index + 1}}、 {{item}}
+        </view>
+    </view>
+    <view class="workPlanCard">
+        <view class="title">编辑区域</view>
+        <view wx:for="{{workList}}" wx:for-item="item" wx:key="index" class="flex">
+            <input class="input content_list" bindinput="inputChange" data-index="{{index}}" value="{{item}}" />
+            <text class="del" bindtap="delEvent"  data-index="{{index}}" value="{{item}}" >x</text>
+        </view>
+        <l-button shape="semicircle" width="400" bindtap="addEvent">添加</l-button>
+    </view>
+</view>

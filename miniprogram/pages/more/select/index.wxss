@@ -1,0 +1,93 @@
+/* pages/luckDraw/index.wxss */
+.box {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.between {
+    justify-content: space-between;
+    padding: 0 10rpx;
+}
+.page {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    height: 100%;
+  }
+  .input {
+    flex: 1;
+    height: 60rpx;
+    font-size: 32rpx;
+    color: #333333;
+    padding: 0 20rpx;
+    border: 1px solid #cccccc;
+    border-radius: 10rpx;
+    margin-right: 20rpx;
+  }
+  .header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 20rpx;
+  }
+  
+  .add {
+    font-size: 32rpx;
+    color: #333333;
+  }
+  
+.list {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 20rpx;
+}
+
+.item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 20rpx;
+    border-bottom: 1px solid #cccccc;
+}
+
+.index {
+    font-size: 32rpx;
+    color: #999999;
+    margin-right: 30rpx;
+}
+
+.label {
+    font-size: 32rpx;
+    color: #333333;
+    flex: 1;
+}
+
+.delete {
+    font-size: 32rpx;
+    color: #ff0000;
+    margin-left: 30rpx;
+}
+
+.top_btn {
+  flex: 1;
+  text-align: center;
+  font-size: 40rpx;
+  font-weight: 600;
+}
+.top_btn text {
+  color: rgb(0, 162, 255);
+}
+.operate_btn {
+  position: fixed;
+  bottom: 50rpx;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+.operate_btn button{
+}

@@ -7,6 +7,10 @@
     问题反馈
 </view>
 <view class="item">
+    <image src="/images/more.png" alt="" ></image>
+    <navigator url="/pages/more/index" hover-class="navigator-hover">更多</navigator>
+</view>
+<view class="item">
     <image src="/images/about.png" alt="" ></image>
     关于小程序
 </view>
