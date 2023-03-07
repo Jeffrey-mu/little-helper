@@ -74,13 +74,17 @@
 }
 
 .top_btn {
+  width: 100vw;
+  position: fixed;
+  top: 200rpx;
+  left: 0rpx;
   flex: 1;
   text-align: center;
-  font-size: 40rpx;
+  font-size: 60rpx;
   font-weight: 600;
 }
 .top_btn text {
-  color: rgb(0, 162, 255);
+  color: #6E85B7;
 }
 .operate_btn {
   position: fixed;

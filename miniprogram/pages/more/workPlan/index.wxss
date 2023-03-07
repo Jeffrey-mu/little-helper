@@ -43,13 +43,17 @@
 
 .flex {
     display: flex;
+    margin: 10rpx 0;
 }
 
 .del {
-    background-color: red;
+    background-color: rgba(231, 21, 21, 0.712);
     color: #fff;
     width: 50rpx;
-    margin: 10rpx;
+    height: 50rpx;
+    border-radius: 50%;
+    padding: 10rpx;
+    margin: 0 10rpx;
 }
 
 .copyEvent {

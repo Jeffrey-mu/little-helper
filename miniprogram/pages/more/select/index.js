@@ -10,7 +10,7 @@ Page({
         fonts: [{
           text: 'YES',
           fontColor: '#ffffff',
-          top: '50%'
+          top: '20%'
         }],
         range: 10,
         background: '#e9e8fe'
@@ -25,8 +25,7 @@ Page({
         background: '#b8c5f2'
       },
     ],
-    buttons: [
-      {
+    buttons: [{
         radius: '41px',
         background: '#E8D5C4'
       },
@@ -48,7 +47,7 @@ Page({
     items: [],
     show: true,
     inputValue: '',
-    colors: ["#6E85B7", "#E7AB9A", "#95BDFF"],
+    colors: ["#E7AB9A", "#95BDFF", "#6E85B7"],
     value: ""
   },
   onLoad() {
@@ -94,8 +93,10 @@ Page({
     })
   },
   generate() {
+    let data = (this.data.items ? this.data.items : wx.getStorageSync('eatlist'))
+    let len = data.length
     this.setData({
-      prizes: (this.data.items ? this.data.items : wx.getStorageSync('eatlist')).map((item, index) => {
+      prizes: data.map((item, index) => {
         return {
           fonts: [{
             text: item.label,
@@ -103,7 +104,7 @@ Page({
             top: '50%'
           }],
           range: 10,
-          background: this.data.colors[index],
+          background: index === len - 1 ? this.data.colors[2] : this.data.colors[index % 2],
         }
       })
     });

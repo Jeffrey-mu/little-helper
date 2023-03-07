@@ -17,6 +17,6 @@
             <input class="input content_list" bindinput="inputChange" data-index="{{index}}" value="{{item}}" />
             <text class="del" bindtap="delEvent"  data-index="{{index}}" value="{{item}}" >x</text>
         </view>
-        <l-button shape="semicircle" width="400" bindtap="addEvent">添加</l-button>
+        <l-button bg-color="#10C8D1" shape="semicircle" width="400" bindtap="addEvent">添加</l-button>
     </view>
 </view>

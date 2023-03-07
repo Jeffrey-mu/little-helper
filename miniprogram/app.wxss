@@ -8,8 +8,11 @@
 
 button {
   background: initial;
+  background-color: #10C8D1;
 }
-
+.l-btn-default {
+  background-color: #10C8D1 !important;
+}
 button:focus{
   outline: 0;
 }

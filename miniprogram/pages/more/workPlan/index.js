@@ -20,12 +20,13 @@ Page({
         let workPlan = [this.data.title, ...this.data.workList]
         wx.setClipboardData({
             data: workPlan.map((item, index) => (index ? index + '、' + item : item)).filter(item => item)
-            .join('\n'),
-            success: function () {
+                .join('\n'),
+            success: () => {
                 wx.showToast({
                     title: '复制成功',
                     icon: 'none'
                 })
+                wx.setStorageSync('workPlan', this.data.workList)
             }
         })
 
@@ -73,22 +74,20 @@ Page({
     /**
      * 生命周期函数--监听页面显示
      */
-    onShow: function () {
-    },
+    onShow: function () {},
 
     /**
      * 生命周期函数--监听页面隐藏
      */
     onHide: function () {
-        
+
     },
 
     /**
      * 生命周期函数--监听页面卸载
      */
     onUnload: function () {
-        wx.setStorageSync('workPlan', this.data.workList)
-
+        // wx.setStorageSync('workPlan', this.data.workList)
     },
 
     /**

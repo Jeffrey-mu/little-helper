@@ -1,6 +1,6 @@
 <!--pages/luckDraw/index.wxml-->
 <view style="margin:10rpx" class="top_btn" wx:if="{{show}}">
-  " <text>{{value}}</text> "
+  <text>{{value}}</text>
 </view>
 
 <view class="box" wx:if="{{show}}">
@@ -23,5 +23,5 @@
   </view>
 </view>
 <view class="operate_btn">
-  <l-button width="700" shape="semicircle" bindtap="showAdd">{{show ? '添加' : '确定'}}</l-button>
+  <l-button bg-color="#10C8D1" width="700" shape="semicircle" bindtap="showAdd">{{show ? '添加' : '确定'}}</l-button>
 </view>
