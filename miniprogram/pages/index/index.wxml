@@ -6,6 +6,3 @@
         </view>
     </navigator>
 </view>
-<!-- <view class="flex">
-    <l-button shape="semicircle" width="700" bindtap="goto">进入我的密码箱</l-button>
-</view> -->

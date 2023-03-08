@@ -23,5 +23,5 @@
   </view>
 </view>
 <view class="operate_btn">
-  <l-button bg-color="#10C8D1" width="700" shape="semicircle" bindtap="showAdd">{{show ? '添加' : '确定'}}</l-button>
+  <van-button color="#10C8D1" block bindtap="showAdd" round type="primary">{{show ? '添加' : '确定'}}</van-button>
 </view>

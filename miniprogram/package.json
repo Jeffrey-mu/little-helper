@@ -11,6 +11,6 @@
   "license": "ISC",
   "dependencies": {
     "@lucky-canvas/mini": "^0.0.7",
-    "lin-ui": "^0.9.12"
+    "@vant/weapp": "^1.10.14"
   }
 }

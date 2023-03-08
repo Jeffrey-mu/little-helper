@@ -1,7 +1,7 @@
 <view class="workplan_content">
     <view class="workPlanCard">
         <view class="title">工作计划</view>
-        <view bindtap="copyEvent" class="copyEvent"> 
+        <view bindtap="copyEvent" class="copyEvent">
             copy
         </view>
         <view class="content_list">
@@ -17,6 +17,6 @@
             <input class="input content_list" bindinput="inputChange" data-index="{{index}}" value="{{item}}" />
             <text class="del" bindtap="delEvent"  data-index="{{index}}" value="{{item}}" >x</text>
         </view>
-        <l-button bg-color="#10C8D1" shape="semicircle" width="400" bindtap="addEvent">添加</l-button>
+        <van-button color="#10C8D1" block bindtap="addEvent" round type="primary">添加</van-button>
     </view>
 </view>
