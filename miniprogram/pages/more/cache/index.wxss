@@ -1,0 +1,10 @@
+/* miniprogram/pages/more/cache/index.wxss */
+
+.cache {
+
+}
+.flex{
+    display: flex;
+    justify-content: space-between;
+    padding-right: 200rpx;
+}

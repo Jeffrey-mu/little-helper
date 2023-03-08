@@ -17,9 +17,9 @@ Page({
                 link: '/pages/more/select/index'
             },
             {
-                label: '敬请期待',
-                icon: 'jingqingqidai',
-                link: '/'
+                label: '清理缓存',
+                icon: 'qinglihuancun',
+                link: '/pages/more/cache/index'
             },
             {
                 label: '敬请期待',

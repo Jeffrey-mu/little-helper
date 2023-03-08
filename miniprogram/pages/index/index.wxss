@@ -22,8 +22,8 @@
     align-items: center;
     margin-bottom: 30rpx;
     box-shadow: 10px 10px 10px 4px #cccccc;
-    -webkit-box-shadow: 10px 10px 10px 4px #cccccc;
-    -moz-box-shadow: 10px 10px 10px 4px #cccccc;
+    /* -webkit-box-shadow: 10px 10px 10px 4px #cccccc;
+    -moz-box-shadow: 10px 10px 10px 4px #cccccc; */
     padding-top: 20rpx;
 }
 

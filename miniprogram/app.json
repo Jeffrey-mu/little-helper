@@ -1,11 +1,12 @@
 {
     "pages": [
         "pages/index/index",
-        "pages/more/workPlan/index",
         "pages/more/select/index",
+        "pages/more/workPlan/index",
         "pages/more/index",
         "pages/setting/setting",
-        "pages/luckDraw/index"
+        "pages/luckDraw/index",
+        "pages/more/cache/index"
     ],
     "window": {
         "backgroundColor": "#10C8D1",
@@ -36,12 +37,17 @@
     "sitemapLocation": "sitemap.json",
     "lazyCodeLoading": "requiredComponents",
     "usingComponents": {
-        "l-popup": "/miniprogram_npm/lin-ui/popup/index",
         "lucky-wheel": "/miniprogram_npm/@lucky-canvas/mini/lucky-wheel/index",
         "lucky-grid": "/miniprogram_npm/@lucky-canvas/mini/lucky-grid/index",
         "slot-machine": "/miniprogram_npm/@lucky-canvas/mini/slot-machine/index",
         "iconfont": "./components/iconfont/index",
         "van-button": "@vant/weapp/button/index",
-        "van-field": "@vant/weapp/field/index"
+        "van-field": "@vant/weapp/field/index",
+        "van-cell": "@vant/weapp/cell/index",
+        "van-cell-group": "@vant/weapp/cell-group/index",
+        "van-tab": "@vant/weapp/tab/index",
+        "van-tabs": "@vant/weapp/tabs/index",
+        "van-tag": "@vant/weapp/tag/index",
+        "van-transition": "@vant/weapp/transition/index"
     }
 }

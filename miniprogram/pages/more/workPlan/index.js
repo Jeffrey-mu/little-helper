@@ -38,7 +38,7 @@ Page({
     },
     inputChange(e) {
         const index = e.currentTarget.dataset.index;
-        const value = e.detail.value;
+        const value = e.detail;
         const items = this.data.workList;
         items[index] = value;
         this.setData({
