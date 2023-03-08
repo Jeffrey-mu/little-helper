@@ -5,7 +5,28 @@ Page({
      * 页面的初始数据
      */
     data: {
-
+        index_menu: [
+            {
+                label: '工作计划',
+                icon: 'gongzuojihua',
+                link: '/pages/more/workPlan/index'
+            },
+            {
+                label: '帮你选',
+                icon: 'mingzhong',
+                link: '/pages/more/select/index'
+            },
+            {
+                label: '敬请期待',
+                icon: 'jingqingqidai',
+                link: '/'
+            },
+            {
+                label: '敬请期待',
+                icon: 'jingqingqidai',
+                link: '/'
+            }
+        ]
     },
 
     /**

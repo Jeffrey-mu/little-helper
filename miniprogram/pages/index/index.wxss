@@ -4,6 +4,7 @@
     justify-content: center;
     margin-top: 200rpx;
 }
+
 /* miniprogram/pages/more/index.wxss */
 .more {
     display: flex;
@@ -12,6 +13,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
 }
+
 .more_item {
     width: 30%;
     display: flex;
@@ -19,16 +21,12 @@
     flex-direction: column;
     align-items: center;
     margin-bottom: 30rpx;
-    box-shadow:10px 10px 10px 4px #cccccc;
--webkit-box-shadow:10px 10px 10px 4px #cccccc;
--moz-box-shadow:10px 10px 10px 4px #cccccc;
+    box-shadow: 10px 10px 10px 4px #cccccc;
+    -webkit-box-shadow: 10px 10px 10px 4px #cccccc;
+    -moz-box-shadow: 10px 10px 10px 4px #cccccc;
+    padding-top: 20rpx;
 }
+
 .more_item view {
     line-height: 60rpx;
-}
-image {
-    margin-top: 20rpx;
-    margin-right: 10rpx;
-    width: 100rpx;
-    height: 100rpx;
 }

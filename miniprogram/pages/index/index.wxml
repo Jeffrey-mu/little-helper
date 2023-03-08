@@ -1,30 +1,10 @@
-<!--miniprogram/pages/index/index.wxml-->
-<!--miniprogram/pages/more/index.wxml-->
 <view class="more">
-    <navigator url="/pages/more/workPlan/index" hover-class="navigator-hover" class="more_item">
-        <image src="/images/workPlan.png" alt=""></image>
+    <navigator wx:for="{{index_menu}}" wx:for-item="item" wx:key="index" url="{{item.link}}" hover-class="navigator-hover" class="more_item">
+        <iconfont icon="{{item.icon}}" size="100" color="#111"/>
         <view>
-            工作计划
+            {{item.label}}
         </view>
     </navigator>
-    <navigator url="/pages/more/select/index" hover-class="navigator-hover" class="more_item">
-        <image src="/images/select.png" alt=""></image>
-        <view>
-            帮你选
-        </view>
-    </navigator>
-    <view class="more_item">
-        <image src="/images/coming-soon.png" alt=""></image>
-        <view>
-            敬请期待
-        </view>
-    </view>
-    <view class="more_item">
-        <image src="/images/coming-soon.png" alt=""></image>
-        <view>
-            敬请期待
-        </view>
-    </view>
 </view>
 <!-- <view class="flex">
     <l-button shape="semicircle" width="700" bindtap="goto">进入我的密码箱</l-button>
