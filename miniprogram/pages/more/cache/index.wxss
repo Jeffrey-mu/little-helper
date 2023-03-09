@@ -1,10 +1,9 @@
 /* miniprogram/pages/more/cache/index.wxss */
 
 .cache {
-
+    margin-top: 20rpx;
 }
 .flex{
     display: flex;
     justify-content: space-between;
-    padding-right: 200rpx;
 }

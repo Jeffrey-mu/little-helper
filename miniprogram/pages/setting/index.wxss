@@ -1,0 +1,6 @@
+/* miniprogram/pages/setting/index.wxss */
+.title{
+   
+    padding-left: 25rpx;
+    font-size: 28rpx;
+}

@@ -5,8 +5,7 @@ Page({
      * 页面的初始数据
      */
     data: {
-        index_menu: [
-            {
+        index_menu: [{
                 label: '工作计划',
                 icon: 'gongzuojihua',
                 link: '/pages/more/workPlan/index'
@@ -41,8 +40,7 @@ Page({
             data: {
                 type: 'getOpenId'
             }
-        }).then((resp) => {
-        })
+        }).then((resp) => {})
     },
 
     /**
@@ -57,8 +55,13 @@ Page({
      */
     onShow: function () {
 
+        if (typeof this.getTabBar === 'function' && this.getTabBar()) {
+            this.getTabBar().setData({
+                // 当前页面的 tabBar 索引
+                active: 0
+            })
+        }
     },
-
     /**
      * 生命周期函数--监听页面隐藏
      */
@@ -95,7 +98,7 @@ Page({
     },
     goto() {
         wx.switchTab({
-          url: '/pages/password/password',
+            url: '/pages/password/password',
         })
     }
 })

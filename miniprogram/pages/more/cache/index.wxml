@@ -1,36 +1,38 @@
 <!--miniprogram/pages/more/cache/index.wxml-->
 <view class="cache">
-    <van-cell wx:for="{{index_menu}}" wx:item="item" use-label-slot>
-        <view slot="title" class="flex">
-            <view>
-                <iconfont style="margin-right: 10rpx" icon="{{item.icon}}" size="40" color="#111" />
-                {{item.label}}
+    <van-cell-group inset>
+        <van-cell wx:for="{{index_menu}}" bind:click="cilckCell" data-key="{{item.key}}" is-link wx:item="item"
+            use-label-slot>
+            <view slot="title" class="flex">
+                <view>
+                    <iconfont style="margin-right: 10rpx" icon="{{item.icon}}" size="30" color="#111" />
+                    {{item.label}}
+                </view>
+                <van-tag type="{{item.isCeche ? 'success' : 'warning'}}">{{item.isCeche ? '未清理' : '已清理'}}</van-tag>
+
+                <!-- <van-tag type="primary">标签</van-tag> -->
             </view>
-            <!-- <van-tag type="primary">标签</van-tag> -->
-        </view>
-        <view slot="label">
-            <van-tag type="{{item.isCeche ? 'success' : 'warning'}}">{{item.isCeche ? '未清理' : '已清理'}}</van-tag>
-        </view>
-        <view slot="right-icon">
+            <view slot="label">
+            </view>
+            <!-- <view slot="right-icon">
             <van-button color="#10C8D1" disabled="{{item.loading || !item.isCeche}}" loading="{{item.loading}}"
                 bind:click="cacheEvent" data-key="{{item.key}}" type="primary" size="small">
                 <iconfont style="margin-right: 10rpx" icon="qinglihuancun" size="40" color="#fff" />
             </van-button>
-        </view>
-    </van-cell>
-    <van-cell-group>
-        <van-cell size="large">
+        </view> -->
+        </van-cell>
+    </van-cell-group>
+    <view class="empty-block"></view>
+    <van-cell-group inset>
+        <van-cell size="large" is-link bind:click="cilckCell" data-key="all">
             <view slot="title" class="flex">
                 <view>
-                    <iconfont style="margin-right: 10rpx" icon="quanbu" size="40" color="#111" />
+                    <iconfont style="margin-right: 10rpx" icon="quanbu" size="30" color="#111" />
                     全部清除
                 </view>
             </view>
-            <view slot="right-icon">
-                <van-button disabled="{{clearAll}}"  color="#10C8D1" bind:click="cacheEvent" data-key="all" type="primary" size="small">
-                    <iconfont style="margin-right: 10rpx" icon="qinglihuancun" size="40" color="#fff" />
-                </van-button>
-            </view>
         </van-cell>
     </van-cell-group>
+    <van-dialog id="van-dialog" />
+
 </view>

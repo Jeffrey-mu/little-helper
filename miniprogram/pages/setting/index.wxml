@@ -1,0 +1,19 @@
+<!--miniprogram/pages/setting/index.wxml-->
+<view class="empty-block ">
+</view>
+<van-cell-group inset>
+  <van-cell title="缓存设置" is-link />
+</van-cell-group>
+<view class="empty-block ">
+</view>
+<!--miniprogram/pages/setting/index.wxml-->
+<van-cell-group inset>
+  <van-cell title="关于小程序" is-link />
+</van-cell-group>
+<view class="empty-block ">
+</view>
+<!--miniprogram/pages/setting/index.wxml-->
+<van-cell-group inset>
+  <van-cell title="赞赏支持" is-link />
+  <van-cell title="关于作者" is-link />
+</van-cell-group>

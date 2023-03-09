@@ -4,9 +4,9 @@
         "pages/more/select/index",
         "pages/more/workPlan/index",
         "pages/more/index",
-        "pages/setting/setting",
         "pages/luckDraw/index",
-        "pages/more/cache/index"
+        "pages/more/cache/index",
+        "pages/setting/index"
     ],
     "window": {
         "backgroundColor": "#10C8D1",
@@ -16,21 +16,15 @@
         "navigationBarTextStyle": "white"
     },
     "tabBar": {
-        "color": "#333333",
-        "selectedColor": "#3963bc",
-        "backgroundColor": "#ffffff",
+        "custom": true,
         "list": [
             {
-                "pagePath": "pages/luckDraw/index",
-                "text": "抽奖",
-                "iconPath": "images/draw.png",
-                "selectedIconPath": "images/drawa.png"
+                "pagePath": "pages/index/index",
+                "text": "首页"
             },
             {
-                "pagePath": "pages/setting/setting",
-                "text": "设置",
-                "iconPath": "images/set.png",
-                "selectedIconPath": "images/seta.png"
+                "pagePath": "pages/setting/index",
+                "text": "设置"
             }
         ]
     },
@@ -48,6 +42,9 @@
         "van-tab": "@vant/weapp/tab/index",
         "van-tabs": "@vant/weapp/tabs/index",
         "van-tag": "@vant/weapp/tag/index",
-        "van-transition": "@vant/weapp/transition/index"
+        "van-transition": "@vant/weapp/transition/index",
+        "van-dialog": "@vant/weapp/dialog/index",
+        "van-tabbar": "@vant/weapp/tabbar/index",
+        "van-tabbar-item": "@vant/weapp/tabbar-item/index"
     }
 }

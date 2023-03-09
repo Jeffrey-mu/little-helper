@@ -1,4 +1,5 @@
 // miniprogram/pages/more/cache/index.js
+import Dialog from '@vant/weapp/dialog/dialog';
 Page({
 
     /**
@@ -29,6 +30,20 @@ Page({
     onLoad: function (options) {
         this.initIndexMenu()
     },
+    cilckCell(e) {
+        let key = e.currentTarget.dataset.key
+        const message =  `是否清理${key === 'all' ? '全部' : this.data.index_menu.find(item => item.key === key).label}菜单缓存？` 
+        Dialog.confirm({
+                title: '清除缓存',
+                message
+            })
+            .then(() => {
+                this.cacheEvent(e)
+            })
+            .catch(() => {
+                // on cancel
+            });
+    },
     initIndexMenu(key) {
         this.setData({
             index_menu: this.data.index_menu.map(item => {
@@ -48,7 +63,6 @@ Page({
      */
     onReady: function () {},
     cacheEvent(e) {
-
         let key = e.currentTarget.dataset.key
         if (key === 'all') {
             this.data.index_menu.forEach(item => {
@@ -70,6 +84,7 @@ Page({
             if (key !== 'all')
                 this.clearCache(key)
             this.initIndexMenu(key)
+            
         }, 1000)
     },
     isCeche(key) {
