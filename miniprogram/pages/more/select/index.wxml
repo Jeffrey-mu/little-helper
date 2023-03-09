@@ -1,23 +1,23 @@
 <!--pages/luckDraw/index.wxml-->
 <view style="margin:10rpx" class="top_btn" wx:if="{{show}}">
-  <text>{{value}}</text>
+  <text style="color: {{colors[active][3]}}">{{value}}</text>
 </view>
-<van-tabs active="{{ active }}" bind:change="onChange" color="#10C8D1">
+<van-tabs active="{{ active }}"  bind:change="onChange" color="#10C8D1">
   <van-tab title="{{item}}" disabled="{{state === 1}}" wx:for="{{tabs}}" wx:key="{{item}}"></van-tab>
-  <van-tab title="标签 2"></van-tab>
-  <van-tab title="标签 3"></van-tab>
-  <van-tab title="标签 4"></van-tab>
-  <van-tab title="标签 5"></van-tab>
-  <van-tab title="标签 6"></van-tab>
 </van-tabs>
 
-<view class="box" wx:if="{{show}}">
+<view class="box" wx:if="{{show}}" style="background:{{colors[active][0]}}">
   <lucky-wheel wx:if="{{rander}}" id="myLucky" width="700rpx" height="700rpx" blocks="{{blocks}}"
     prizes="{{prizes[active]}}" buttons="{{buttons}}" bindstart="start" bindend="end" />
 </view>
 <view wx:else class="page">
   <view class="header">
-    <van-field use-button-slot style="flex: 1" size="large" border="{{ true }}" bind:input="inputChange"
+    <van-field label="标题" use-button-slot style="flex: 1" size="large" border="{{ true }}" bind:input="inputTitleChange"
+      value="{{tabs[active]}}">
+    </van-field>
+  </view>
+  <view class="header">
+    <van-field label="选项" use-button-slot style="flex: 1" size="large" border="{{ true }}" bind:input="inputChange"
       value="{{inputValue}}">
       <van-button slot="button" size="small" type="primary" bindtap="addItem">
         添加
@@ -28,15 +28,20 @@
     <block wx:for="{{items[active]}}" wx:key="index">
       <view class="item">
         <van-cell-group style="flex: 1">
-          <van-cell size="large" title="选项{{index+1}}" value="{{item.label}}" />
+          <van-cell size="large" title="{{index + 1}}、{{item.label}}" border="{{ false }}">
+            <view slot="right-icon">
+              <view class="delete" bindtap="deleteItem" data-index="{{index}}">删除</view>
+            </view>
+          </van-cell>
         </van-cell-group>
-        <view class="delete" bindtap="deleteItem" data-index="{{index}}">删除</view>
       </view>
+      <view class="empty-block"></view>
     </block>
   </view>
 </view>
 <view class="operate_btn">
-  <van-button disabled="{{state===1}}" style="width: 90%" color="#10C8D1" block bind:click="showAdd" round type="primary">
+  <van-button disabled="{{state===1}}" style="width: 90%" color="#10C8D1" block bind:click="showAdd" round
+    type="primary">
     {{show ? '添加' : '确定'}}
   </van-button>
 </view>

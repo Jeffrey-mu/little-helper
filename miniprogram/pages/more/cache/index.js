@@ -9,14 +9,14 @@ Page({
         index_menu: [{
                 label: '工作计划',
                 icon: 'gongzuojihua',
-                key: 'workPlan',
+                keys: ['workPlan'],
                 loading: false,
                 isCeche: false
             },
             {
                 label: '帮你选',
                 icon: 'mingzhong',
-                key: 'eatlist',
+                keys: ['eatlist', 'select:active', 'select:tabs'],
                 loading: false,
                 isCeche: false
             },
@@ -31,29 +31,23 @@ Page({
         this.initIndexMenu()
     },
     cilckCell(e) {
-        let key = e.currentTarget.dataset.key
-        const message =  `是否清理${key === 'all' ? '全部' : this.data.index_menu.find(item => item.key === key).label}菜单缓存？` 
+        let item = e.currentTarget.dataset.item
+        const message = `是否清理${item === 'all' ? '全部' : item.label}菜单缓存？`
         Dialog.confirm({
                 title: '清除缓存',
                 message
             })
             .then(() => {
-                this.cacheEvent(e)
+                this.cacheEvent(item)
             })
             .catch(() => {
                 // on cancel
             });
     },
-    initIndexMenu(key) {
+    initIndexMenu() {
         this.setData({
             index_menu: this.data.index_menu.map(item => {
-                item.isCeche = this.isCeche(item.key)
-                if (item.key === key) {
-                    item.loading = false
-
-                } else if (key === 'all')
-                    item.loading = false
-
+                item.isCeche = this.isCeche(item.keys)
                 return item
             })
         })
@@ -62,36 +56,28 @@ Page({
      * 生命周期函数--监听页面初次渲染完成
      */
     onReady: function () {},
-    cacheEvent(e) {
-        let key = e.currentTarget.dataset.key
-        if (key === 'all') {
+    cacheEvent(data) {
+        if (data === 'all') {
             this.data.index_menu.forEach(item => {
-                if (item.isCeche)
-                    this.clearCache(item.key)
+                item.keys.map(item => {
+                    this.clearCache(item)
+                })
             })
         } else {
-            this.setData({
-                index_menu: this.data.index_menu.map(item => {
-                    if (item.key === key) {
-                        item.loading = true;
-                    }
-                    return item
-                })
+            data.keys.map(item => {
+                this.clearCache(item)
             })
         }
 
-        setTimeout(() => {
-            if (key !== 'all')
-                this.clearCache(key)
-            this.initIndexMenu(key)
-            
-        }, 1000)
+
     },
-    isCeche(key) {
-        return wx.getStorageSync(key)
+    isCeche(keys) {
+        return keys.some(key => wx.getStorageSync(key))
     },
     clearCache(key) {
         wx.removeStorageSync(key)
+        this.initIndexMenu()
+
     },
     /**
      * 生命周期函数--监听页面显示

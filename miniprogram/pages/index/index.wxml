@@ -1,8 +1,7 @@
 <view class="more">
-    <navigator wx:for="{{index_menu}}" wx:for-item="item" wx:key="index" url="{{item.link}}" hover-class="navigator-hover" class="more_item">
-        <iconfont icon="{{item.icon}}" size="100" color="#111"/>
-        <view>
-            {{item.label}}
-        </view>
-    </navigator>
+    <van-grid column-num="3" gutter="{{ 5 }}" clickable>
+        <van-grid-item text="{{item.label}}" wx:for="{{index_menu}}" wx:for-item="item" wx:key="index" url="{{item.link}}">
+            <iconfont slot="icon" icon="{{item.icon}}" size="50" color="#111" />
+        </van-grid-item>
+    </van-grid>
 </view>

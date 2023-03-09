@@ -1,8 +1,13 @@
 <!--miniprogram/pages/more/cache/index.wxml-->
+<van-notice-bar mode="closeable"
+  left-icon="volume-o"
+  text="请注意，清理缓存可能会导致本地存储数据丢失，因为某些应用程序可能会将数据存储在缓存文件中以做持久化。在清除缓存之前，请确保备份所有重要数据，并谨慎操作。"
+/>
+
 <view class="cache">
     <van-cell-group inset>
-        <van-cell wx:for="{{index_menu}}" bind:click="cilckCell" data-key="{{item.key}}" is-link wx:item="item"
-            use-label-slot>
+        <van-cell wx:for="{{index_menu}}" bind:click="cilckCell" data-item="{{item}}" is-link wx:item="item" wx:key="item"
+            use-label-slot size="large">
             <view slot="title" class="flex">
                 <view>
                     <iconfont style="margin-right: 10rpx" icon="{{item.icon}}" size="30" color="#111" />
@@ -24,7 +29,7 @@
     </van-cell-group>
     <view class="empty-block"></view>
     <van-cell-group inset>
-        <van-cell size="large" is-link bind:click="cilckCell" data-key="all">
+        <van-cell size="large" is-link bind:click="cilckCell" data-item="all">
             <view slot="title" class="flex">
                 <view>
                     <iconfont style="margin-right: 10rpx" icon="quanbu" size="30" color="#111" />

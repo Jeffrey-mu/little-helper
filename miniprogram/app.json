@@ -45,6 +45,9 @@
         "van-transition": "@vant/weapp/transition/index",
         "van-dialog": "@vant/weapp/dialog/index",
         "van-tabbar": "@vant/weapp/tabbar/index",
-        "van-tabbar-item": "@vant/weapp/tabbar-item/index"
+        "van-tabbar-item": "@vant/weapp/tabbar-item/index",
+        "van-grid": "@vant/weapp/grid/index",
+        "van-grid-item": "@vant/weapp/grid-item/index",
+        "van-notice-bar": "@vant/weapp/notice-bar/index"
     }
 }

@@ -34,3 +34,6 @@ page {
   margin: 10rpx 0;
   margin-top: 20rpx;
 }
+view {
+  /* font-size: 25rpx; */
+}

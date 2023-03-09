@@ -29,205 +29,156 @@ Page({
 
       "中餐": [{
           "label": "烤鸭",
-          "food": "Roast duck"
         },
         {
           "label": "麻辣烫",
-          "food": "Spicy hot pot"
         },
         {
           "label": "火锅",
-          "food": "Hot pot"
         },
         {
           "label": "炒饭",
-          "food": "Fried rice"
         },
         {
           "label": "炸鸡",
-          "food": "Fried chicken"
         },
         {
           "label": "糖醋排骨",
-          "food": "Sweet and sour spare ribs"
         },
         {
           "label": "宫保鸡丁",
-          "food": "Kung Pao chicken"
         },
         {
           "label": "小笼包",
-          "food": "Soup dumplings"
         },
         {
           "label": "烤串",
-          "food": "Grilled skewers"
         },
         {
           "label": "炸鱼",
-          "food": "Fried fish"
         }
       ],
       "西餐": [{
           "label": "牛排",
-          "food": "Steak"
         },
         {
           "label": "烤鸡",
-          "food": "Roast chicken"
         },
         {
           "label": "意大利面",
-          "food": "Spaghetti"
         },
         {
           "label": "比萨",
-          "food": "Pizza"
         },
         {
           "label": "汉堡",
-          "food": "Hamburger"
         },
         {
           "label": "三明治",
-          "food": "Sandwich"
         },
         {
           "label": "沙拉",
-          "food": "Salad"
         },
         {
           "label": "鸡尾酒",
-          "food": "Cocktail"
         }
       ],
       "日韩料理": [{
           "label": "寿司",
-          "food": "Sushi"
         },
         {
           "label": "生鱼片",
-          "food": "Sashimi"
         },
         {
           "label": "拉面",
-          "food": "Ramen"
         },
         {
           "label": "炸鸡",
-          "food": "Fried chicken"
         },
         {
           "label": "烤肉",
-          "food": "Grilled meat"
         },
         {
           "label": "石锅拌饭",
-          "food": "Bibimbap"
         },
         {
           "label": "烤鳗鱼",
-          "food": "Grilled eel"
         }
       ],
       "快餐": [{
           "label": "麦当劳",
-          "food": "McDonald's"
         },
         {
           "label": "肯德基",
-          "food": "KFC"
         },
         {
           "label": "汉堡王",
-          "food": "Burger King"
         },
         {
           "label": "必胜客",
-          "food": "Pizza Hut"
         },
         {
           "label": "星巴克",
-          "food": "Starbucks"
         }
       ],
       "小吃": [{
           "label": "煎饼",
-          "food": "Jianbing"
         },
         {
           "label": "烧饼",
-          "food": "Shaobing"
         },
         {
           "label": "油条",
-          "food": "Youtiao"
         },
         {
           "label": "豆浆",
-          "food": "Soy milk"
         },
         {
           "label": "包子",
-          "food": "Steamed bun"
         },
         {
           "label": "饺子",
-          "food": "Dumplings"
         },
         {
           "label": "馄饨",
-          "food": "Wonton"
         },
         {
           "label": "羊肉串",
-          "food": "Lamb skewers"
         },
         {
           "label": "烤麸",
-          "food": "Roasted gluten"
         }
       ],
       "端游": [{
           "label": "绝地求生",
-          "description": "A popular battle royale game where players need to survive on an island and fight against other players."
         },
         {
           "label": "英雄联盟",
-          "description": "A popular MOBA game where players can choose different heroes to battle."
         },
         {
           "label": "魔兽世界",
-          "description": "A popular MMORPG game where players can create their own character and explore a vast fantasy world."
         },
         {
           "label": "守望先锋",
-          "description": "A popular team-based first-person shooter game where players need to work together to achieve objectives."
         },
         {
           "label": "怪物猎人世界",
-          "description": "A popular action RPG where players need to hunt down and defeat various monsters in a fantasy world."
         }
       ],
       "手游": [{
           "label": "王者荣耀",
-          "description": "A popular MOBA game where players can choose different heroes to battle."
         },
         {
           "label": "和平精英",
-          "description": "A popular first-person shooter game where players need to survive in a battle royale arena."
         },
         {
           "label": "明日方舟",
-          "description": "A strategy tower defense game where players need to assemble their own team of operators to fight."
         },
         {
           "label": "阴阳师",
-          "description": "A Japanese-style RPG with a focus on exorcising demons and collecting spirits."
         },
         {
           "label": "剑网3",
-          "description": "A popular MMORPG with a martial arts theme."
         }
       ],
       "电影": [{
@@ -269,69 +220,89 @@ Page({
     items: [],
     show: true,
     inputValue: '',
-    colors: ["#E7AB9A", "#95BDFF", "#6E85B7"],
+    colors: [
+      ['#DEFCF9', '#85CDFD', '#3C84AB', '#362FD9'],
+      ['#C1AEFC', '#D1FFF3', '#BEF0CB', '#F6F7C1'],
+      ['#332C39', '#C92C6D', '#609EA2', '#F0EEED'],
+      ['#205E61', '#3F979B', '#8BF5FA', '#F9F54B'],
+      ['#EEE9DA', '#BDCDD6', '#93BFCF', '#6096B4'],
+      ['#AA5656', '#F1DBBF', '#B99B6B', '#698269'],
+      ['#C04A82', '#DC8449', '#FDD36A', '#BE6DB7'],
+      ['#40513B', '#609966', '#9DC08B', '#EDF1D6'],
+      ['#EEEEEE', '#E8D5C4', '#FFF1DC', '#3A98B9'],
+      ['#95BDFF', '#B4E4FF', '#DFFFD8', '#F7C8E0'],
+      ['#A459D1', '#F16767', '#FFB84C', '#F5EAEA'],
+      ['#183A1D', '#F0A04B', '#E1EEDD', '#FEFBE9'],
+      ['#18122B', '#393053', '#443C68', '#635985'],
+      ['#FBFFB1', '#FFEBB4', '#FFBFA9', '#FFACAC'],
+      ['#F1DEC9', '#C8B6A6', '#A4907C', '#8D7B68'],
+      ['#617143', '#DF7857', '#E7AB9A', '#EDE9D5'],
+      ['#CBE4DE', '#0E8388', '#2E4F4F', '#2C3333'],
+      ['#F8F5E4', '#F7C04A', '#3F497F', '#539165'],
+      ['#7A3E65', '#A84448', '#E9A178', '#F6E1C3'],
+      ['#BFACE2', '#655DBB', '#3E54AC', '#ECF2FF'],
+      ['#4C4B16', '#898121', '#E7B10A', '#F7F1E5'],
+      ['#F5FFC9', '#B3E5BE', '#A86464', '#804674'],
+    ],
     value: "",
     rander: true,
     state: 0
   },
   onLoad() {
     this.setData({
-      tabs: Object.keys(this.data.typeList)
+      active: wx.getStorageSync('select:active') || 0,
     })
-    if (wx.getStorageSync('eatlist')) {
-      this.setData({
-        items: wx.getStorageSync('eatlist')
-      })
-    } else {
-      this.setData({
-        items: [...Object.keys(this.data.typeList).map(item => {
-            return this.data.typeList[item]
-          }), [],
-          [],
-          [],
-          [],
-          []
-        ]
-      })
-    }
+    let object = new Array(this.data.colors.length - Object.keys(this.data.typeList).length).fill({
+      "选项": [{
+        label: '-_-'
+      }, {
+        label: '^_^'
+      }, {
+        label: 'q_q'
+      }, {
+        label: '$_$'
+      }]
+    }).reduce((item, pre, index) => {
+      item["选项" + index] = pre["选项"]
+      return item
+    }, {})
+    this.setData({
+      typeList: {
+        ...this.data.typeList,
+        ...object
+      },
+    })
+    this.setData({
+      tabs: wx.getStorageSync('select:tabs') || Object.keys(this.data.typeList),
+    })
+    this.setData({
+      items: wx.getStorageSync('eatlist') || [...Object.keys(this.data.typeList).map(item => {
+        return this.data.typeList[item]
+      })]
+    })
     setTimeout(() => this.generate())
 
   },
   onUnload: function () {
     wx.setStorageSync('eatlist', this.data.items)
+    wx.setStorageSync('select:active', this.data.active)
+    wx.setStorageSync('select:tabs', this.data.tabs)
   },
-  randomColor() {
-    var x = Array.from({
-      length: 30
-    }, (v, i) => i / 29);
 
-    // 生成一个蓝色渐变数组
-    var colors = x.map(function (value) {
-      var r = Math.round(value * 255);
-      var g = Math.round(value * 0);
-      var b = Math.round(value * 255);
-      return 'rgba(' + b + ',' + g + ',' + r + ', 1)';
-    });
-
-    var hexColors = colors.map((value) => {
-      var rgb = value.substring(5, value.length - 2).split(',');
-      var r = parseInt(rgb[0]);
-      var g = parseInt(rgb[1]);
-      var b = parseInt(rgb[2]);
-      return '#' + this.toHex(r) + this.toHex(g) + this.toHex(b);
-    });
-    return hexColors
-  },
   onChange(e) {
     this.setData({
-      rander: false
+      rander: false,
     })
     this.setData({
       active: e.detail.index,
       value: ''
     })
     this.setData({
-      rander: true
+      rander: true,
+      blocks: [{
+        padding: '13px',
+        background: this.data.colors[this.data.active][3]
+      }],
     })
     // this.generate()
 
@@ -345,19 +316,26 @@ Page({
       inputValue: e.detail
     })
   },
+  inputTitleChange(e) {
+    let tabs = this.data.tabs
+    tabs.splice(this.data.active, 1, e.detail)
+    this.setData({
+      tabs
+    })
+  },
   generate() {
     let data = (this.data.items ? this.data.items : wx.getStorageSync('eatlist'))
-    let array = data.map(item => {
+    let array = data.map((item, data_index) => {
       return item.map(((inner, index) => {
         let len = item.length
         return {
           fonts: [{
             text: inner.label,
-            fontColor: '#ffffff',
+            fontColor: this.data.colors[data_index][3],
             top: '40%'
           }],
           range: 10,
-          background: index === len - 1 ? this.data.colors[2] : this.data.colors[index % 2],
+          background: index === len - 1 ? this.data.colors[data_index][2] : this.data.colors[data_index][index % 2],
         }
       }))
     })
@@ -383,7 +361,7 @@ Page({
   deleteItem: function (e) {
     var index = e.currentTarget.dataset.index;
     var items = this.data.items;
-    items.splice(index, 1);
+    items[this.data.active].splice(index, 1);
     this.setData({
       items: items
     });
@@ -408,11 +386,11 @@ Page({
       // const index = 0
       // 调用stop方法然后缓慢停止
       child.lucky.stop()
-     setTimeout(() => {
-      this.setData({
-        state: 0
-      })
-     }, 2000)
+      setTimeout(() => {
+        this.setData({
+          state: 0
+        })
+      }, 2000)
     }, 3000)
   },
   end(event) {

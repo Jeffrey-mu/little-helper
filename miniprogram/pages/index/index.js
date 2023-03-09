@@ -20,11 +20,6 @@ Page({
                 icon: 'qinglihuancun',
                 link: '/pages/more/cache/index'
             },
-            {
-                label: '敬请期待',
-                icon: 'jingqingqidai',
-                link: '/'
-            }
         ]
     },
 

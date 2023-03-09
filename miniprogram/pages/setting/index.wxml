@@ -2,18 +2,22 @@
 <view class="empty-block ">
 </view>
 <van-cell-group inset>
-  <van-cell title="缓存设置" is-link />
+  <van-cell size="large" title="缓存设置" is-link url="/pages/more/cache/index" />
 </van-cell-group>
 <view class="empty-block ">
 </view>
 <!--miniprogram/pages/setting/index.wxml-->
 <van-cell-group inset>
-  <van-cell title="关于小程序" is-link />
+  <van-cell size="large" title="关于小程序" is-link />
 </van-cell-group>
 <view class="empty-block ">
 </view>
 <!--miniprogram/pages/setting/index.wxml-->
 <van-cell-group inset>
-  <van-cell title="赞赏支持" is-link />
-  <van-cell title="关于作者" is-link />
+  <van-cell size="large" title="赞赏支持" is-link bind:click="toggleDialog" data-key="rewardShow" />
+  <van-cell size="large" title="关于作者" is-link />
 </van-cell-group>
+<van-dialog use-slot id="van-dialog" show="{{rewardShow}}" confirm-button-open-type="saveImageToPhotosAlbum"
+  bind:getuserinfo="saveImageToPhotosAlbum">
+  <image src="/images/collection-code.pic.jpg" />
+</van-dialog>

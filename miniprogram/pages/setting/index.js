@@ -5,16 +5,24 @@ Page({
      * 页面的初始数据
      */
     data: {
-
+        rewardShow: false
     },
-
+    
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
 
     },
-
+    saveImageToPhotosAlbum(e) {
+        console.log(e);
+    },
+    toggleDialog(e) {
+        let key = e.currentTarget.dataset.key
+        this.setData({
+            [key]: true
+        })
+    },
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
