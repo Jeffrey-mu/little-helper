@@ -37,7 +37,7 @@
         "minifyWXSS": true
     },
     "appid": "wx0acf6dba0233e6dc",
-    "projectname": "password_box1",
+    "projectname": "little-helper",
     "libVersion": "2.20.1",
     "cloudfunctionTemplateRoot": "cloudfunctionTemplate",
     "condition": {

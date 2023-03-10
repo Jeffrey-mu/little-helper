@@ -14,7 +14,8 @@ Page({
             '新客审核质控',
             '整体流量质控，GA监测反馈',
             '客户服务平台客户管理细节设计',
-        ]
+        ],
+        active: -1
     },
     copyEvent() {
         let workPlan = [this.data.title, ...this.data.workList]
@@ -34,6 +35,9 @@ Page({
     addEvent() {
         this.setData({
             workList: [...this.data.workList, '']
+        })
+        this.setData({
+            active: this.data.workList.length - 1
         })
     },
     inputChange(e) {

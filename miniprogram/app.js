@@ -1,6 +1,6 @@
 // app.js
 App({
-  onLaunch: function () {
+  onLaunch: async function () {
     if (!wx.cloud) {
       console.error('请使用 2.2.3 或以上的基础库以使用云能力');
     } else {
@@ -13,7 +13,19 @@ App({
         traceUser: true,
       });
     }
-
+    const res = await wx.cloud.callContainer({
+      "config": {
+        "env": ""
+      },
+      "path": "/",
+      "header": {
+        "X-WX-SERVICE": "helper-service",
+        "content-type": "application/json"
+      },
+      "method": "GET",
+      "data": ""
+    })
+    console.log(res);
     this.globalData = {};
   }
 });
