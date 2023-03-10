@@ -1,9 +1,9 @@
 <!--pages/luckDraw/index.wxml-->
 <view style="margin:10rpx" class="top_btn" wx:if="{{show}}">
-  <text style="color: {{colors[active][3]}}">{{value}}</text>
+  <text style="color: {{colors[active][3]}}" class="fade">{{value}}</text>
 </view>
 <van-tabs active="{{ active }}"  bind:change="onChange" color="#10C8D1">
-  <van-tab title="{{item}}" disabled="{{state === 1}}" wx:for="{{tabs}}" wx:key="{{item}}"></van-tab>
+  <van-tab title="{{item}}" disabled="{{state === 1}}" wx:for="{{tabs}}" wx:key="index"></van-tab>
 </van-tabs>
 
 <view class="box" wx:if="{{show}}" style="background:{{colors[active][0]}}">
