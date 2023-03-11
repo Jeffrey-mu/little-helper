@@ -1,7 +1,7 @@
 {
     "pages": [
-        "pages/salary/index",
         "pages/index/index",
+        "pages/salary/index",
         "pages/more/select/index",
         "pages/more/workPlan/index",
         "pages/more/index",

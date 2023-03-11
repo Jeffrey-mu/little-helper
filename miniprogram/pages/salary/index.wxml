@@ -84,7 +84,7 @@
         <view slot="right-icon">
           <view class="cell-line">
           <view style="display: flex; line-height: 70rpx">
-            <van-stepper disable-input value="{{ form.ratio0 }}" min="4" max="12" bind:change="formChange" data-key="ratio0"/>%
+            <van-stepper value="{{ form.ratio0 }}" min="4" max="12" bind:change="formChange" data-key="ratio0"/><text style="padding-left: 20rpx" class="gray">%</text>
           </view>
           </view>
         </view>

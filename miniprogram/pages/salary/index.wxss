@@ -6,6 +6,9 @@
   color: #ffffff;
 
 }
+.fl {
+  display: flex;
+}
 .flex {
   display: flex;
   height: 80rpx;
@@ -26,7 +29,7 @@
   border-bottom:none ;
 }
 .gray {
-  color: #dddddd;
+  color: #b9b7b7;
 }
 .salary {
   font-weight: 600;
@@ -39,7 +42,7 @@
 }
 .rmbunit {
   font-size: 25rpx;
-  color: #eeeeee;
+  color: #b9b7b7;
 }
 .cell-line {
   display: flex;
@@ -57,4 +60,7 @@
 }
 .cell-title {
   color: #978f8f;
+}
+.van-field__label {
+  color: #978f8f !important;
 }

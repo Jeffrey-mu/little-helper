@@ -55,6 +55,13 @@ Page({
             
         })
     },
+    showSelect(e) {
+        let key = e.currentTarget.dataset.key
+        this.setData({
+            showSelect: true,
+            activeKey: key
+        })
+    },
     onSelect(event) {
         this.setData({
             [this.data.activeKey]: event.detail.key
