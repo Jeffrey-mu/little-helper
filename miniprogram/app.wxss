@@ -1,5 +1,4 @@
 /**app.wxss**/
-
 .container {
   display: flex;
   flex-direction: column;
@@ -31,8 +30,7 @@ page {
 }
 .empty-block {
   color: rgba(50, 62, 68, 0.6);
-  margin: 10rpx 0;
-  margin-top: 20rpx;
+  margin: 20rpx 0;
 }
 view {
   /* font-size: 25rpx; */

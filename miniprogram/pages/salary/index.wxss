@@ -1,0 +1,60 @@
+/* miniprogram/pages/salary/index.wxss */
+.card {
+  background-color: #AA77FF;
+  overflow: hidden;
+  transition: .3s;
+  color: #ffffff;
+
+}
+.flex {
+  display: flex;
+  height: 80rpx;
+  background-color: rgba(0, 0, 0, .2);
+  margin-top: 20rpx;
+}
+.flex_item {
+  flex: 1;
+  display: flex;
+  line-height: 80rpx;
+  font-size: 25rpx;
+  padding: 0 40rpx;
+
+}
+.flex_item:nth-child(2) {
+  border: 1px solid rgba(0, 0, 0, .1);
+  border-top:none ;
+  border-bottom:none ;
+}
+.gray {
+  color: #dddddd;
+}
+.salary {
+  font-weight: 600;
+  font-size: 60rpx;
+  padding: 0 40rpx;
+}
+.rmb {
+  color: #ffffff;
+  padding-left: 10rpx;
+}
+.rmbunit {
+  font-size: 25rpx;
+  color: #eeeeee;
+}
+.cell-line {
+  display: flex;
+  width: 500rpx;
+  justify-content: space-between;
+}
+.des {
+  margin-left: 10rpx;
+  padding: 0 20rpx;
+  margin-bottom: 20rpx;
+  color: #777777;
+  font-size: 30rpx;
+  border-left: 8rpx solid #AA77FF;
+  border-radius: 3rpx;
+}
+.cell-title {
+  color: #978f8f;
+}

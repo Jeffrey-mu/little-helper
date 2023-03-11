@@ -13,19 +13,6 @@ App({
         traceUser: true,
       });
     }
-    const res = await wx.cloud.callContainer({
-      "config": {
-        "env": ""
-      },
-      "path": "/",
-      "header": {
-        "X-WX-SERVICE": "helper-service",
-        "content-type": "application/json"
-      },
-      "method": "GET",
-      "data": ""
-    })
-    console.log(res);
     this.globalData = {};
   }
 });

@@ -1,5 +1,6 @@
 {
     "pages": [
+        "pages/salary/index",
         "pages/index/index",
         "pages/more/select/index",
         "pages/more/workPlan/index",
@@ -47,6 +48,14 @@
         "van-tabbar-item": "@vant/weapp/tabbar-item/index",
         "van-grid": "@vant/weapp/grid/index",
         "van-grid-item": "@vant/weapp/grid-item/index",
-        "van-notice-bar": "@vant/weapp/notice-bar/index"
+        "van-notice-bar": "@vant/weapp/notice-bar/index",
+        "van-row": "@vant/weapp/row/index",
+        "van-col": "@vant/weapp/col/index",
+        "van-divider": "@vant/weapp/divider/index",
+        "van-switch": "@vant/weapp/switch/index",
+        "van-icon": "@vant/weapp/icon/index",
+        "van-action-sheet": "@vant/weapp/action-sheet/index",
+        "van-picker": "@vant/weapp/picker/index",
+        "van-stepper": "@vant/weapp/stepper/index"
     }
 }

@@ -16,6 +16,11 @@ Page({
                 link: '/pages/more/select/index'
             },
             {
+                label: '工资计算',
+                icon: 'tubiao',
+                link: '/pages/salary/index'
+            },
+            {
                 label: '清理缓存',
                 icon: 'qinglihuancun',
                 link: '/pages/more/cache/index'

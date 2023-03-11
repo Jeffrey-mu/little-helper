@@ -2,8 +2,9 @@
 <view style="margin:10rpx" class="top_btn fade" hidden="{{!show}}">
   <text style="color: {{colors[active][3]}}">{{value}}</text>
 </view>
-<van-tabs active="{{ active }}"  bind:change="onChange" color="#10C8D1">
-  <van-tab title="{{item}}" disabled="{{state === 1}}" wx:for="{{tabs}}" wx:key="index"></van-tab>
+<van-tabs active="{{ active }}"  bind:change="onChange" color="#10C8D1" swipeable>
+  <van-tab title="{{item}}" disabled="{{state === 1}}" wx:for="{{tabs}}" wx:key="index">
+  </van-tab>
 </van-tabs>
 
 <view class="box" wx:if="{{show}}" style="background:{{colors[active][0]}}">

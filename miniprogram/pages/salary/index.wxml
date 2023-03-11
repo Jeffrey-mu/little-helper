@@ -1,0 +1,141 @@
+<!-- miniprogram/pages/salary/index.wxml -->
+<view class="salary_box">
+  <view class="card">
+    <view class="salary">{{ result.salary }} <text class="rmbunit">元</text></view>
+    <view class="flex">
+      <view class="flex_item">
+        <view class="gray">
+          个税:
+        </view>
+        <view class="rmb">
+          {{result.tax}}
+        </view>
+      </view>
+      <view class="flex_item">
+        <view class="gray">
+          社保:
+        </view>
+        <view class="rmb">
+          {{result.wuxian}}
+        </view>
+      </view>
+      <view class="flex_item">
+        <view class="gray">
+          公积金:
+        </view>
+        <view class="rmb">
+          {{result.gongjijin}}
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="salaryCalculator">
+    <view class="empty-block"></view>
+    <van-cell-group>
+      <van-field label-class="cell-title" value="{{ form.salary }}" type="number" placeholder="请输入" clearable
+        label="税前工资" bind:change="syncData" bind:input="formChange" data-key="salary" />
+    </van-cell-group>
+    <view class="empty-block"></view>
+    <van-cell-group>
+      <van-cell title-class="cell-title" title="社保">
+      </van-cell>
+      <van-cell title-class="cell-title" title="缴纳方式" bind:click="showSelect" data-key="jnsb">
+        <view slot="right-icon">
+          <view class="cell-line">
+            {{selectList[jnsb].name}}
+            <view>
+            </view>
+            <van-icon name="arrow" />
+          </view>
+        </view>
+      </van-cell>
+      <van-cell title-class="cell-title" title="缴纳基数" wx:if="{{jnsb}}">
+        <view slot="right-icon">
+          <view class="cell-line">
+            <van-field label-class="cell-title" value="{{ form.wuxian }}" type="number" placeholder="请输入" clearable
+              bind:input="formChange" data-key="wuxian" />
+          </view>
+        </view>
+      </van-cell>
+    </van-cell-group>
+    <view class="empty-block"></view>
+    <van-cell-group>
+      <van-cell title-class="cell-title" title="公积金">
+      </van-cell>
+      <van-cell title-class="cell-title" title="缴纳方式" bind:click="showSelect" data-key="jngjj">
+        <view slot="right-icon">
+          <view class="cell-line">
+            {{selectList[jngjj].name}}
+            <view>
+            </view>
+            <van-icon name="arrow" />
+          </view>
+        </view>
+      </van-cell>
+      <van-cell title-class="cell-title" title="缴纳基数" wx:if="{{jngjj}}">
+        <view slot="right-icon">
+          <view class="cell-line">
+            <van-field label-class="cell-title" value="{{ form.gongjijin }}" type="number" placeholder="请输入" clearable
+              bind:input="formChange" data-key="gongjijin" />
+          </view>
+        </view>
+      </van-cell>
+      <van-cell title-class="cell-title" title="缴纳比例">
+        <view slot="right-icon">
+          <view class="cell-line">
+          <view style="display: flex; line-height: 70rpx">
+            <van-stepper disable-input value="{{ form.ratio0 }}" min="4" max="12" bind:change="formChange" data-key="ratio0"/>%
+          </view>
+          </view>
+        </view>
+      </van-cell>
+    </van-cell-group>
+
+  </view>
+  <view class="empty-block"></view>
+  <van-action-sheet show="{{ showSelect }}" cancel-text="取消" actions="{{ selectList }}" bind:close="onClose"
+    bind:select="onSelect" />
+  <van-cell-group>
+    <van-divider contentPosition="center">附加项</van-divider>
+    <van-row>
+      <van-col span="12">
+        <van-field label-class="cell-title" value="{{ kouchu.zinv }}" bind:input="kouchuChange" data-key="zinv"
+          type="number" clearable label="子女教育">
+        </van-field>
+      </van-col>
+      <van-col span="12">
+        <van-field label-class="cell-title" value="{{ kouchu.jixu }}" bind:input="kouchuChange" data-key="jixu"
+          type="number" clearable label="继续教育">
+        </van-field>
+      </van-col>
+    </van-row>
+    <van-row>
+      <van-col span="12">
+        <van-field label-class="cell-title" value="{{ kouchu.dabing }}" bind:input="kouchuChange" data-key="salary"
+          type="number" clearable label="大病医疗">
+        </van-field>
+      </van-col>
+      <van-col span="12">
+        <van-field label-class="cell-title" value="{{ kouchu.daikuan }}" bind:input="kouchuChange" data-key="daikuan"
+          type="number" clearable label="住房贷款">
+        </van-field>
+      </van-col>
+    </van-row>
+    <van-row>
+      <van-col span="12">
+        <van-field label-class="cell-title" value="{{ kouchu.zufang }}" bind:input="kouchuChange" data-key="zufang"
+          type="number" clearable label="住房租金">
+        </van-field>
+      </van-col>
+      <van-col span="12">
+        <van-field label-class="cell-title" value="{{ kouchu.shanyang }}" bind:input="kouchuChange" data-key="shanyang"
+          type="number" clearable label="赡养老人">
+        </van-field>
+      </van-col>
+    </van-row>
+  </van-cell-group>
+  <view class="empty-block"></view>
+  <view style="margin: 0 40rpx">
+    <van-button block color="#AA77FF" round bind:click="onSubmit">计算</van-button>
+  </view>
+</view>
