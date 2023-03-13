@@ -1,0 +1,17 @@
+<!--miniprogram/pages/setting/feedback/index.wxml-->
+<view class="feedback">
+
+    <view class="card {{state ? 'copy_success' : ''}}" bindtap="copyEvent">
+        <view class="flex" >
+            <view>
+            </view>
+        </view>
+        <view class="title">
+            反馈邮箱
+        </view>
+        <view class="email">
+            {{email}}
+        </view>
+        <iconfont class="copy" icon="{{state ? 'chenggongfuzhi' : 'copy'}}" size="40" color="{{state ? '#ffffff' : '#ffffff'}}" /> 
+    </view>
+</view>

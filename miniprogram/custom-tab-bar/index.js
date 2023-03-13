@@ -23,13 +23,6 @@ Component({
             this.setData({
                 active: event.detail
             })
-        if ( 0<event.detail<2 ) {
-            wx.showToast({
-              title: '正在积极开发中...',
-              icon: "none"
-            })
-        }
-
         }
     }
 })

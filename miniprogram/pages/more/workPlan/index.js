@@ -15,7 +15,14 @@ Page({
             '整体流量质控，GA监测反馈',
             '客户服务平台客户管理细节设计',
         ],
-        active: -1
+        active: -1,
+        state: 0,
+        edit: false
+    },
+    editEvent() {
+        this.setData({
+            edit: !this.data.edit
+        })
     },
     copyEvent() {
         let workPlan = [this.data.title, ...this.data.workList]
@@ -28,6 +35,9 @@ Page({
                     icon: 'none'
                 })
                 wx.setStorageSync('workPlan', this.data.workList)
+                this.setData({
+                    state: 1
+                })
             }
         })
 

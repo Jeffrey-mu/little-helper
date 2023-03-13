@@ -1,0 +1,58 @@
+/* miniprogram/pages/setting/feedback/index.wxss */
+.feedback {
+}
+
+
+.card {
+    position: relative;
+    background: rgb(0, 31, 36);
+    background: rgb(238, 174, 202);
+    border-radius: 20rpx;
+    padding: 20rpx;
+    box-shadow: 1px 1px 1px 1px #ccc;
+    text-align: center;
+    margin: 50rpx 30rpx;
+    color: #eeeeee;
+    background: rgba( 75, 108, 183, 0.65 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 15.5px );
+    -webkit-backdrop-filter: blur( 15.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    transition: all .3s;
+}
+
+.copy_success {
+    background: rgba(10, 168, 81, 0.904);
+}
+
+.title {
+    margin: 20rpx 0;
+    text-align: center;
+    font-size: 40rpx;
+    font-weight: 600;
+}
+
+.email {
+    font-size: 35rpx;
+}
+
+.flex {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+
+}
+
+.flex view {
+    width: 25rpx;
+    height: 25rpx;
+    background-color: #f6f6f6;
+    border-radius: 50%;
+}
+
+.copy {
+    position: absolute;
+    top: 10rpx;
+    right: 20rpx;
+}

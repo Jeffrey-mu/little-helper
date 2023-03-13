@@ -1,8 +1,10 @@
 <view class="workplan_content">
-    <view class="workPlanCard">
+    <van-notice-bar color="#1989fa" background="#ecf9ff" left-icon="info-o" text="点击复制才会对工作计划保存。" />
+    <view class="workPlanCard auto" bindtap="copyEvent" wx:if="{{!edit}}">
         <view class="title">工作计划</view>
-        <view bindtap="copyEvent" class="copyEvent">
-            copy
+        <view class="copyEvent">
+            <iconfont class="copy" icon="{{state ? 'chenggongfuzhi' : 'copy'}}" size="40"
+                color="{{state ? 'rgba(10, 168, 81, 0.904)' : '#555'}}" />
         </view>
         <view class="content_list">
             {{title}}
@@ -11,12 +13,19 @@
             {{index + 1}}、 {{item}}
         </view>
     </view>
-    <view class="workPlanCard">
+    <view class="workPlanCard" wx:else>
         <view class="title">编辑区域</view>
         <view wx:for="{{workList}}" wx:for-item="item" wx:key="index" class="flex">
-            <van-field style="flex: 1" size="large" border="{{ true }}" bind:input="inputChange" data-index="{{index}}" value="{{item}}" />
-            <text class="del" bindtap="delEvent" data-index="{{index}}" value="{{item}}">x</text>
+            <van-field style="flex: 1" size="large" border="{{ true }}" bind:input="inputChange" data-index="{{index}}"
+                value="{{item}}" />
+            <text class="del" bindtap="delEvent" data-index="{{index}}" value="{{item}}">X</text>
         </view>
-        <van-button color="#10C8D1" block bindtap="addEvent" round type="primary">添加</van-button>
+        <view class="flex">
+            <van-button style="width: 40%" color="#10C8D1" block bindtap="addEvent" round type="primary">添加</van-button>
+            <van-button style="width: 40%" block type="primary" round bindtap="editEvent">确定</van-button>
+        </view>
+    </view>
+    <view class="bottom_btn">
+        <van-button style="width: 90%" wx:if="{{!edit}}" block bindtap="editEvent">编辑</van-button>
     </view>
 </view>

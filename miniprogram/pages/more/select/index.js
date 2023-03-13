@@ -3,227 +3,594 @@ const app = getApp()
 Page({
   data: {
     blocks: [{
-      padding: '13px',
-      background: '#E8D5C4'
+      padding: "90rpx",
+      // background: this.data.colors[this.data.active][3],
+      imgs: [{
+        src: "/images/background.png",
+        height: '700rpx',
+        width: '700rpx',
+        top: '14rpx',
+        left: '6rpx'
+      }],
     }],
     buttons: [{
-      radius: '41px',
-      background: '#E8D5C4'
-    },
-    {
-      radius: '40px',
-      background: '#afc8ff'
-    },
-    {
-      radius: '35px',
-      background: '#7286D3',
-      pointer: true,
-      fonts: [{
-        text: '开始',
-        top: '-20px',
-        fontColor: '#ffffff'
-      }]
-    },
+        radius: '41px',
+        background: '#E8D5C4'
+      },
+      {
+        radius: '40px',
+        background: '#afc8ff'
+      },
+      {
+        radius: '35px',
+        background: '#7286D3',
+        pointer: true,
+        fonts: [{
+          text: '开始',
+          top: '-20px',
+          fontColor: '#ffffff'
+        }]
+      },
     ],
     typeList: {
-      '早餐':
-        [{ label: '面包' },
-        { label: '鸡蛋' },
-        { label: '牛奶' },
-        { label: '豆浆' },
-        { label: '粥' },
-        { label: '油条' },
-        { label: '包子' },
-        { label: '馒头' },
-        { label: '煎饼' },
-        { label: '牛肉面' }],
-      '午餐':
-        [{ label: '汉堡' },
-        { label: '披萨' },
-        { label: '炸鸡' },
-        { label: '烤肉' },
-        { label: '火锅' },
-        { label: '炒饭' },
-        { label: '炸酱面' },
-        { label: '麻辣烫' },
-        { label: '寿司' },
-        { label: '拉面' }],
-      '晚餐':
-        [{ label: '烤鱼' },
-        { label: '烤肉' },
-        { label: '串串香' },
-        { label: '煲仔饭' },
-        { label: '小龙虾' },
-        { label: '炒菜' },
-        { label: '酸菜鱼' },
-        { label: '麻辣香锅' },
-        { label: '烤串' },
-        { label: '烤鸭' }],
-      '夜宵':
-        [{ label: '炸鸡' },
-        { label: '烤串' },
-        { label: '烧烤' },
-        { label: '小龙虾' },
-        { label: '烤肉' },
-        { label: '麻辣烫' },
-        { label: '米线' },
-        { label: '牛肉粉' },
-        { label: '鸡蛋灌饼' },
-        { label: '煎饼果子' }],
-      '艺术':
-        [{ label: '绘画' },
-        { label: '音乐' },
-        { label: '舞蹈' },
-        { label: '写作' },
-        { label: '摄影' },
-        { label: '剧场' },
-        { label: '博物馆' },
-        { label: '展览' },
-        { label: '设计' },
-        { label: '手工' }],
-      '旅游':
-        [{ label: '海滩' },
-        { label: '山区' },
-        { label: '城市' },
-        { label: '乡村' },
-        { label: '温泉' },
-        { label: '度假村' },
-        { label: '古镇' },
-        { label: '公园' },
-        { label: '动物园' },
-        { label: '遗址' }],
-      '家庭':
-        [{ label: '陪伴家人' },
-        { label: '做家务' },
-        { label: '照顾孩子' },
-        { label: '教育孩子' },
-        { label: '看电视' },
-        { label: '玩游戏' },
-        { label: '野餐' },
-        { label: '购物' },
-        { label: '修理' },
-        { label: '装饰' }],
-      '自我提升':
-        [{ label: '心理咨询' },
-        { label: '自我探索' },
-        { label: '职业规划' },
-        { label: '学习新技能' },
-        { label: '参加培训' },
-        { label: '读书' },
-        { label: '旅行' },
-        { label: '写作' },
-        { label: '公益活动' },
-        { label: '交流' }],
-      '电子竞技':
-        [{ label: '英雄联盟' },
-        { label: '王者荣耀' },
-        { label: 'DOTA2' },
-        { label: 'CSGO' },
-        { label: '守望先锋' },
-        { label: '炉石传说' },
-        { label: '星际争霸2' },
-        { label: '绝地求生' },
-        { label: '和平精英' },
-        { label: 'APEX英雄' }],
-      '健康':
-        [{ label: '运动' },
-        { label: '瑜伽' },
-        { label: '沙拉' },
-        { label: '水果' },
-        { label: '健身' },
-        { label: '游泳' },
-        { label: '骑行' },
-        { label: '登山' },
-        { label: '慢跑' },
-        { label: '拳击' }],
-      '社交活动':
-        [{ label: '聚会' },
-        { label: '电影院' },
-        { label: '喝咖啡' },
-        { label: '打保龄球' },
-        { label: '唱K' },
-        { label: '游戏厅' },
-        { label: '酒吧' },
-        { label: '逛街' },
-        { label: '野餐' },
-        { label: '健身房' }],
-      '学习':
-        [{ label: '阅读' },
-        { label: '听讲座' },
-        { label: '看纪录片' },
-        { label: '做练习' },
-        { label: '参加培训' },
-        { label: '上网课' },
-        { label: '写论文' },
-        { label: '研究报告' },
-        { label: '参加讨论' },
-        { label: '实践' }],
-      '娱乐':
-        [{ label: '看电影' },
-        { label: '玩游戏' },
-        { label: '听音乐' },
-        { label: '逛商场' },
-        { label: '赛车' },
-        { label: '游乐场' },
-        { label: '演唱会' },
-        { label: '展览会' },
-        { label: '戏剧' },
-        { label: '喜剧' }],
-      '兴趣爱好':
-        [{ label: '收藏' },
-        { label: '钓鱼' },
-        { label: '园艺' },
-        { label: 'DIY' },
-        { label: '摄影' },
-        { label: '读书' },
-        { label: '写作' },
-        { label: '旅游' },
-        { label: '音乐' },
-        { label: '运动' }],
-      '运动比赛':
-        [{ label: '足球' },
-        { label: '篮球' },
-        { label: '网球' },
-        { label: '高尔夫' },
-        { label: '田径' },
-        { label: '登山' },
-        { label: '游泳' },
-        { label: '拳击' },
-        { label: '赛车' },
-        { label: '击剑' }],
-      '宠物':
-        [{ label: '遛狗' },
-        { label: '喂养宠物' },
-        { label: '训练宠物' },
-        { label: '美容美发' },
-        { label: '宠物医疗' },
-        { label: '宠物用品购物' },
-        { label: '参加宠物展览' },
-        { label: '宠物摄影' },
-        { label: '宠物旅游' },
-        { label: '宠物社交' }],
-      '冒险':
-        [{ label: '滑翔伞' },
-        { label: '潜水' },
-        { label: '跳伞' },
-        { label: '攀岩' },
-        { label: '冲浪' },
-        { label: '漂流' },
-        { label: '探险' },
-        { label: '极限运动' },
-        { label: '摩托旅行' },
-        { label: '长途徒步' }],
-      '美容养生':
-        [{ label: '按摩' },
-        { label: 'SPA' },
-        { label: '美容护肤' },
-        { label: '减肥瘦身' },
-        { label: '瑜伽' },
-        { label: '桑拿' },
-        { label: '草药泡澡' },
-        { label: '中医养生' },
-        { label: '水疗' },
-        { label: '足浴' }]
+      '早餐': [{
+          label: '面包'
+        },
+        {
+          label: '鸡蛋'
+        },
+        {
+          label: '牛奶'
+        },
+        {
+          label: '豆浆'
+        },
+        {
+          label: '粥'
+        },
+        {
+          label: '油条'
+        },
+        {
+          label: '包子'
+        },
+        {
+          label: '馒头'
+        },
+        {
+          label: '煎饼'
+        },
+        {
+          label: '牛肉面'
+        }
+      ],
+      '午餐': [{
+          label: '汉堡'
+        },
+        {
+          label: '披萨'
+        },
+        {
+          label: '炸鸡'
+        },
+        {
+          label: '烤肉'
+        },
+        {
+          label: '火锅'
+        },
+        {
+          label: '炒饭'
+        },
+        {
+          label: '炸酱面'
+        },
+        {
+          label: '麻辣烫'
+        },
+        {
+          label: '寿司'
+        },
+        {
+          label: '拉面'
+        }
+      ],
+      '晚餐': [{
+          label: '烤鱼'
+        },
+        {
+          label: '烤肉'
+        },
+        {
+          label: '串串香'
+        },
+        {
+          label: '煲仔饭'
+        },
+        {
+          label: '小龙虾'
+        },
+        {
+          label: '炒菜'
+        },
+        {
+          label: '酸菜鱼'
+        },
+        {
+          label: '麻辣香锅'
+        },
+        {
+          label: '烤串'
+        },
+        {
+          label: '烤鸭'
+        }
+      ],
+      '夜宵': [{
+          label: '炸鸡'
+        },
+        {
+          label: '烤串'
+        },
+        {
+          label: '烧烤'
+        },
+        {
+          label: '小龙虾'
+        },
+        {
+          label: '烤肉'
+        },
+        {
+          label: '麻辣烫'
+        },
+        {
+          label: '米线'
+        },
+        {
+          label: '牛肉粉'
+        },
+        {
+          label: '鸡蛋灌饼'
+        },
+        {
+          label: '煎饼果子'
+        }
+      ],
+      '艺术': [{
+          label: '绘画'
+        },
+        {
+          label: '音乐'
+        },
+        {
+          label: '舞蹈'
+        },
+        {
+          label: '写作'
+        },
+        {
+          label: '摄影'
+        },
+        {
+          label: '剧场'
+        },
+        {
+          label: '博物馆'
+        },
+        {
+          label: '展览'
+        },
+        {
+          label: '设计'
+        },
+        {
+          label: '手工'
+        }
+      ],
+      '旅游': [{
+          label: '海滩'
+        },
+        {
+          label: '山区'
+        },
+        {
+          label: '城市'
+        },
+        {
+          label: '乡村'
+        },
+        {
+          label: '温泉'
+        },
+        {
+          label: '度假村'
+        },
+        {
+          label: '古镇'
+        },
+        {
+          label: '公园'
+        },
+        {
+          label: '动物园'
+        },
+        {
+          label: '遗址'
+        }
+      ],
+      '家庭': [{
+          label: '陪伴家人'
+        },
+        {
+          label: '做家务'
+        },
+        {
+          label: '照顾孩子'
+        },
+        {
+          label: '教育孩子'
+        },
+        {
+          label: '看电视'
+        },
+        {
+          label: '玩游戏'
+        },
+        {
+          label: '野餐'
+        },
+        {
+          label: '购物'
+        },
+        {
+          label: '修理'
+        },
+        {
+          label: '装饰'
+        }
+      ],
+      '自我提升': [{
+          label: '心理咨询'
+        },
+        {
+          label: '自我探索'
+        },
+        {
+          label: '职业规划'
+        },
+        {
+          label: '学习新技能'
+        },
+        {
+          label: '参加培训'
+        },
+        {
+          label: '读书'
+        },
+        {
+          label: '旅行'
+        },
+        {
+          label: '写作'
+        },
+        {
+          label: '公益活动'
+        },
+        {
+          label: '交流'
+        }
+      ],
+      '电子竞技': [{
+          label: '英雄联盟'
+        },
+        {
+          label: '王者荣耀'
+        },
+        {
+          label: 'DOTA2'
+        },
+        {
+          label: 'CSGO'
+        },
+        {
+          label: '守望先锋'
+        },
+        {
+          label: '炉石传说'
+        },
+        {
+          label: '星际争霸2'
+        },
+        {
+          label: '绝地求生'
+        },
+        {
+          label: '和平精英'
+        },
+        {
+          label: 'APEX英雄'
+        }
+      ],
+      '健康': [{
+          label: '运动'
+        },
+        {
+          label: '瑜伽'
+        },
+        {
+          label: '沙拉'
+        },
+        {
+          label: '水果'
+        },
+        {
+          label: '健身'
+        },
+        {
+          label: '游泳'
+        },
+        {
+          label: '骑行'
+        },
+        {
+          label: '登山'
+        },
+        {
+          label: '慢跑'
+        },
+        {
+          label: '拳击'
+        }
+      ],
+      '社交活动': [{
+          label: '聚会'
+        },
+        {
+          label: '电影院'
+        },
+        {
+          label: '喝咖啡'
+        },
+        {
+          label: '打保龄球'
+        },
+        {
+          label: '唱K'
+        },
+        {
+          label: '游戏厅'
+        },
+        {
+          label: '酒吧'
+        },
+        {
+          label: '逛街'
+        },
+        {
+          label: '野餐'
+        },
+        {
+          label: '健身房'
+        }
+      ],
+      '学习': [{
+          label: '阅读'
+        },
+        {
+          label: '听讲座'
+        },
+        {
+          label: '看纪录片'
+        },
+        {
+          label: '做练习'
+        },
+        {
+          label: '参加培训'
+        },
+        {
+          label: '上网课'
+        },
+        {
+          label: '写论文'
+        },
+        {
+          label: '研究报告'
+        },
+        {
+          label: '参加讨论'
+        },
+        {
+          label: '实践'
+        }
+      ],
+      '娱乐': [{
+          label: '看电影'
+        },
+        {
+          label: '玩游戏'
+        },
+        {
+          label: '听音乐'
+        },
+        {
+          label: '逛商场'
+        },
+        {
+          label: '赛车'
+        },
+        {
+          label: '游乐场'
+        },
+        {
+          label: '演唱会'
+        },
+        {
+          label: '展览会'
+        },
+        {
+          label: '戏剧'
+        },
+        {
+          label: '喜剧'
+        }
+      ],
+      '兴趣爱好': [{
+          label: '收藏'
+        },
+        {
+          label: '钓鱼'
+        },
+        {
+          label: '园艺'
+        },
+        {
+          label: 'DIY'
+        },
+        {
+          label: '摄影'
+        },
+        {
+          label: '读书'
+        },
+        {
+          label: '写作'
+        },
+        {
+          label: '旅游'
+        },
+        {
+          label: '音乐'
+        },
+        {
+          label: '运动'
+        }
+      ],
+      '运动比赛': [{
+          label: '足球'
+        },
+        {
+          label: '篮球'
+        },
+        {
+          label: '网球'
+        },
+        {
+          label: '高尔夫'
+        },
+        {
+          label: '田径'
+        },
+        {
+          label: '登山'
+        },
+        {
+          label: '游泳'
+        },
+        {
+          label: '拳击'
+        },
+        {
+          label: '赛车'
+        },
+        {
+          label: '击剑'
+        }
+      ],
+      '宠物': [{
+          label: '遛狗'
+        },
+        {
+          label: '喂养宠物'
+        },
+        {
+          label: '训练宠物'
+        },
+        {
+          label: '美容美发'
+        },
+        {
+          label: '宠物医疗'
+        },
+        {
+          label: '宠物用品购物'
+        },
+        {
+          label: '参加宠物展览'
+        },
+        {
+          label: '宠物摄影'
+        },
+        {
+          label: '宠物旅游'
+        },
+        {
+          label: '宠物社交'
+        }
+      ],
+      '冒险': [{
+          label: '滑翔伞'
+        },
+        {
+          label: '潜水'
+        },
+        {
+          label: '跳伞'
+        },
+        {
+          label: '攀岩'
+        },
+        {
+          label: '冲浪'
+        },
+        {
+          label: '漂流'
+        },
+        {
+          label: '探险'
+        },
+        {
+          label: '极限运动'
+        },
+        {
+          label: '摩托旅行'
+        },
+        {
+          label: '长途徒步'
+        }
+      ],
+      '美容养生': [{
+          label: '按摩'
+        },
+        {
+          label: 'SPA'
+        },
+        {
+          label: '美容护肤'
+        },
+        {
+          label: '减肥瘦身'
+        },
+        {
+          label: '瑜伽'
+        },
+        {
+          label: '桑拿'
+        },
+        {
+          label: '草药泡澡'
+        },
+        {
+          label: '中医养生'
+        },
+        {
+          label: '水疗'
+        },
+        {
+          label: '足浴'
+        }
+      ]
     },
     tabs: [],
     prizes: [],
@@ -296,7 +663,11 @@ Page({
 
   },
   onUnload: function () {
-    let { items, active, tabs } = this.data
+    let {
+      items,
+      active,
+      tabs
+    } = this.data
     wx.setStorageSync('eatlist', items)
     wx.setStorageSync('select:active', active)
     wx.setStorageSync('select:tabs', tabs)
@@ -312,10 +683,17 @@ Page({
     })
     this.setData({
       rander: true,
-      blocks: [{
-        padding: '13px',
-        background: this.data.colors[this.data.active][3]
-      }],
+      // blocks: [{
+      //   padding: '13px',
+      //   padding: "50px",
+      //   // background: this.data.colors[this.data.active][3],
+      //   imgs: [{
+      //     src: "/images/background.png",
+      //     height: 430,
+      //     width: 420,
+      //     top: 0
+      //   }],
+      // }],
     })
     // this.generate()
 
@@ -400,12 +778,13 @@ Page({
       // const index = 0
       // 调用stop方法然后缓慢停止
       child.lucky.stop()
-      setTimeout(() => {
-        this.setData({
-          state: 0
-        })
-      }, 2000)
-    }, 3000)
+       
+    }, 2500)
+    setTimeout(() => {
+      this.setData({
+        state: 0
+      })
+    }, 5500)
   },
   end(event) {
     // 中奖奖品详情

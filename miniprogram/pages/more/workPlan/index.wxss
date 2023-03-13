@@ -12,7 +12,7 @@
     position: relative;
     padding: 10px;
     width: 650rpx;
-    margin: 10rpx auto;
+    margin: 50rpx auto;
     margin-bottom: 40rpx;
     border-radius: 10px;
     background: #fff;
@@ -47,12 +47,13 @@
 }
 
 .del {
-    background-color: rgba(231, 21, 21, 0.712);
-    color: #fff;
+    color: rgba(231, 21, 21, 0.712);
     width: 50rpx;
     height: 50rpx;
     border-radius: 50%;
     padding: 10rpx;
+    font-weight: 600;
+    font-size: 35rpx;
     margin: 0 10rpx;
 }
 
@@ -62,4 +63,16 @@
     right: 30rpx;
     color: rgb(44, 215, 221);
     font-style: italic;
+}
+.copy_success {
+    background: rgba(10, 168, 81, 0.904);
+    color: #fff;
+    transition: all .2s;
+}
+.flex {
+    display: flex;
+    justify-content: space-around;
+}
+.flex button {
+    flex: 1
 }

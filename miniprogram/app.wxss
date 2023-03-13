@@ -38,3 +38,10 @@ view {
 .fade {
   transition: all .2s;
 }
+.bottom_btn {
+  position: fixed;
+  bottom: 150rpx;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}

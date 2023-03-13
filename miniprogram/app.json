@@ -1,8 +1,9 @@
 {
     "pages": [
         "pages/index/index",
-        "pages/salary/index",
+        "pages/setting/feedback/index",
         "pages/more/select/index",
+        "pages/salary/index",
         "pages/more/workPlan/index",
         "pages/more/index",
         "pages/more/cache/index",

@@ -1,10 +1,13 @@
 /* pages/luckDraw/index.wxss */
+
 .box {
     height: 100vh;
+    padding-top: 300rpx;
     width: 100vw;
     display: flex;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
+    transition: background .2s;
 }
 
 .between {
@@ -86,12 +89,6 @@
 .top_btn text {
   color: #6E85B7;
 }
-.operate_btn {
-  position: fixed;
-  bottom: 50rpx;
-  width: 100vw;
-  display: flex;
-  justify-content: center;
-}
+
 .operate_btn button{
 }

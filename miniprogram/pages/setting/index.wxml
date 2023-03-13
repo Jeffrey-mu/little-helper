@@ -12,6 +12,12 @@
 </van-cell-group>
 <view class="empty-block ">
 </view>
+<van-cell-group inset>
+  <van-cell size="large" title="意见反馈" is-link url="/pages/setting/feedback/index"/>
+</van-cell-group>
+<view class="empty-block ">
+</view>
+
 <!--miniprogram/pages/setting/index.wxml-->
 <van-cell-group inset>
   <van-cell size="large" title="赞赏支持" is-link bind:click="toggleDialog" data-key="rewardShow" />

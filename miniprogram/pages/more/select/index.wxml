@@ -7,11 +7,11 @@
   </van-tab>
 </van-tabs>
 
-<view class="box" wx:if="{{show}}" style="background:{{colors[active][0]}}">
-  <lucky-wheel wx:if="{{rander}}" id="myLucky" width="700rpx" height="700rpx" blocks="{{blocks}}"
-    prizes="{{prizes[active]}}" buttons="{{buttons}}" bindstart="start" bindend="end" />
+<view class="box" wx:if="{{show && rander}}" style="background:{{colors[active][0]}}">
+  <lucky-wheel id="myLucky" width="700rpx" height="700rpx" blocks="{{blocks}}"
+    prizes="{{prizes[active]}}" buttons="{{buttons}}" bindstart="start" bindend="end" bindinit="onChange" />
 </view>
-<view wx:else class="page">
+<view wx:if="{{!show}}" class="page">
   <view class="header">
     <van-field label="标题" use-button-slot style="flex: 1" size="large" border="{{ true }}" bind:input="inputTitleChange"
       value="{{tabs[active]}}">
@@ -40,7 +40,7 @@
     </block>
   </view>
 </view>
-<view class="operate_btn">
+<view class="bottom_btn">
   <van-button disabled="{{state===1}}" style="width: 90%" color="#10C8D1" block bind:click="showAdd" round
     type="primary">
     {{show ? '添加' : '确定'}}
