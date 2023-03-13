@@ -18,7 +18,7 @@
     </van-field>
   </view>
   <view class="header">
-    <van-field label="选项" use-button-slot style="flex: 1" size="large" border="{{ true }}" bind:input="inputChange"
+    <van-field use-button-slot  placeholder="请输入新增选项"  style="flex: 1" size="large" border="{{ true }}" bind:input="inputChange"
       value="{{inputValue}}">
       <van-button slot="button" size="small" type="primary" bindtap="addItem">
         添加
