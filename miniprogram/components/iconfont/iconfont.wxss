@@ -1,8 +1,9 @@
 @font-face {
-  font-family: "iconfont"; /* Project id 3865224 */
-  src: url('//at.alicdn.com/t/c/font_3865224_388t76yh5q3.woff2?t=1678726103390') format('woff2'),
-       url('//at.alicdn.com/t/c/font_3865224_388t76yh5q3.woff?t=1678726103390') format('woff'),
-       url('//at.alicdn.com/t/c/font_3865224_388t76yh5q3.ttf?t=1678726103390') format('truetype');
+  font-family: "iconfont";
+  /* Project id 3865224 */
+  src: url('//at.alicdn.com/t/c/font_3865224_joqvbjm278m.woff2?t=1678775280378') format('woff2'),
+    url('//at.alicdn.com/t/c/font_3865224_joqvbjm278m.woff?t=1678775280378') format('woff'),
+    url('//at.alicdn.com/t/c/font_3865224_joqvbjm278m.ttf?t=1678775280378') format('truetype');
 }
 
 .iconfont {
@@ -11,6 +12,10 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-danmu:before {
+  content: "\e624";
 }
 
 .icon-chenggongfuzhi:before {

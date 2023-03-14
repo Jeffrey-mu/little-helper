@@ -1,0 +1,87 @@
+/* miniprogram/pages/more/barrage/index.wxss */
+
+.barrage_box {
+    padding: 0 150rpx;
+    width: 100vw;
+    height: 100vh;
+    margin: 0 auto;
+    overflow: hidden;
+    box-sizing: border-box;
+    background-color: #111111;
+}
+
+.animate {
+    /* text-shadow: -2rpx -2rpx 0rpx white, 2px 2px 0px black; */
+    line-height: 100vh;
+    text-indent: 30rpx;
+    font-size: 200rpx;
+    font-weight: 600;
+    color: #ffffff;
+    display: inline-block;
+    white-space: nowrap;
+    animation: 18s wordsLoop linear infinite normal;
+}
+
+
+@keyframes wordsLoop {
+    0% {
+        transform: translateX(200px);
+        -webkit-transform: translateX(200px);
+    }
+
+    100% {
+        transform: translateX(-100%);
+        -webkit-transform: translateX(-100%);
+    }
+}
+
+@-webkit-keyframes wordsLoop {
+    0% {
+        transform: translateX(200px);
+        -webkit-transform: translateX(200px);
+    }
+
+    100% {
+        transform: translateX(-100%);
+        -webkit-transform: translateX(-100%);
+    }
+}
+
+.option {
+    transition: all .2s;
+    position: absolute;
+    top: 60rpx;
+    right: 20rpx;
+    padding: 20rpx;
+    width: 400rpx;
+    border-radius: 20rpx;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.line {
+    display: flex;
+    justify-content: space-between;
+    margin: 10rpx;
+    align-items: center;
+}
+
+.line .ball {
+    margin: 10rpx;
+    width: 30rpx;
+    height: 30rpx;
+    border-radius: 50%;
+}
+
+input {
+    flex: 1;
+    padding: 10rpx;
+    padding-left: 20rpx;
+}
+
+.label {
+    width: 90rpx;
+}

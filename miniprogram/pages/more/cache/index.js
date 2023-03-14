@@ -20,6 +20,13 @@ Page({
                 loading: false,
                 isCeche: false
             },
+            {
+                label: '手持弹幕',
+                icon: 'danmu',
+                keys: ['litle:heloer:barrage'],
+                loading: false,
+                isCeche: false
+            },
         ],
         clearAll: false
     },

@@ -1,0 +1,32 @@
+<!--miniprogram/pages/more/barrage/index.wxml-->
+<view class="barrage_box" bindtap="showBackEvent" style="background: {{box_bg_color}}">
+    <view class="animate" style="color: {{color}}">
+        {{value}}
+    </view>
+</view>
+<view class="option" hidden="{{showBack}}">
+    <view class="line">
+        <van-button color="#111" bindtap="backPage">返回上一页</van-button>
+        <van-button color="#111" bindtap="showBackEvent" >确定</van-button>
+    </view>
+    <view class="line">
+        <view class="label">
+            内容
+        </view>
+        <input type="text" bindinput="changeInput" style="flex: 1; border: 1px solid #ccc" value="{{value}}"/>
+    </view>
+    <view class="line">
+    <view class="label">
+        文字颜色
+    </view>
+        <view bindtap="clickEvent" data-key="color" data-value="{{item}}" class="ball" wx:for="{{bg_color}}" wx:item="item" style="background:{{item}}">
+        </view>
+    </view>
+    <view class="line">
+    <view class="label">
+        背景颜色
+        </view>
+        <view bindtap="clickEvent" data-key="box_bg_color" data-value="{{item}}" class="ball" wx:for="{{bg_color}}" wx:item="item" style="background:{{item}}">
+        </view>
+    </view>
+</view>

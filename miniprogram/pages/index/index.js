@@ -21,6 +21,11 @@ Page({
                 link: '/pages/salary/index'
             },
             {
+                label: '手持弹幕',
+                icon: 'danmu',
+                link: '/pages/more/barrage/index'
+            },
+            {
                 label: '清理缓存',
                 icon: 'qinglihuancun',
                 link: '/pages/more/cache/index'

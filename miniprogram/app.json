@@ -1,6 +1,7 @@
 {
     "pages": [
         "pages/index/index",
+        "pages/more/barrage/index",
         "pages/setting/feedback/index",
         "pages/more/select/index",
         "pages/salary/index",
