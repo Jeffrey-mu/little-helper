@@ -663,6 +663,9 @@ Page({
 
   },
   onUnload: function () {
+    this.persistent_data()
+  },
+  persistent_data() {
     let {
       items,
       active,
@@ -672,7 +675,6 @@ Page({
     wx.setStorageSync('select:active', active)
     wx.setStorageSync('select:tabs', tabs)
   },
-
   onChange(e) {
     this.setData({
       rander: false,
@@ -762,6 +764,7 @@ Page({
       show: !this.data.show
     })
     this.generate()
+    this.persistent_data()
   },
   start() {
     this.setData({
@@ -778,7 +781,7 @@ Page({
       // const index = 0
       // 调用stop方法然后缓慢停止
       child.lucky.stop()
-       
+
     }, 2500)
     setTimeout(() => {
       this.setData({
