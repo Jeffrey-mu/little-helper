@@ -9,7 +9,8 @@ Page({
         showBack: true,
         bg_color: ['#111111', '#FF0000', '#8F43EE', '#FFED00', '#ffffff'],
         box_bg_color: '#8F43EE',
-        color: '#FFED00'
+        color: '#FFED00',
+        rolling_speed: 10
     },
 
     /**
@@ -17,14 +18,16 @@ Page({
      */
     onLoad: function (options) {
         let {
-            value='霜皮溜雨四十围，黛色参天二千尺。',
+            value = '霜皮溜雨四十围，黛色参天二千尺。',
             box_bg_color,
-            color
+            color,
+            rolling_speed = 10
         } = wx.getStorageSync('litle:heloer:barrage')
         this.setData({
             color,
             box_bg_color,
-            value
+            value,
+            rolling_speed
         })
     },
     /**
@@ -34,18 +37,25 @@ Page({
         let {
             value,
             box_bg_color,
-            color
+            color,
+            rolling_speed
         } = this.data
         wx.setStorageSync('litle:heloer:barrage', {
             color,
             box_bg_color,
-            value
+            value,
+            rolling_speed
         })
     },
     changeInput(e) {
-        console.log(e);
         this.setData({
             value: e.detail.value
+        })
+    },
+    onChange(e) {
+        const rolling_speed = e.detail
+        this.setData({
+            rolling_speed
         })
     },
     clickEvent(e) {

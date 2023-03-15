@@ -58,6 +58,7 @@
         "van-icon": "@vant/weapp/icon/index",
         "van-action-sheet": "@vant/weapp/action-sheet/index",
         "van-picker": "@vant/weapp/picker/index",
-        "van-stepper": "@vant/weapp/stepper/index"
+        "van-stepper": "@vant/weapp/stepper/index",
+        "van-slider": "@vant/weapp/slider/index"
     }
 }
