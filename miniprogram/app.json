@@ -1,6 +1,7 @@
 {
     "pages": [
         "pages/index/index",
+        "pages/more/decibel/index",
         "pages/more/barrage/index",
         "pages/setting/feedback/index",
         "pages/more/select/index",
@@ -59,6 +60,7 @@
         "van-action-sheet": "@vant/weapp/action-sheet/index",
         "van-picker": "@vant/weapp/picker/index",
         "van-stepper": "@vant/weapp/stepper/index",
-        "van-slider": "@vant/weapp/slider/index"
+        "van-slider": "@vant/weapp/slider/index",
+        "van-circle": "@vant/weapp/circle/index"
     }
 }

@@ -20,8 +20,6 @@
         "uploadWithSourceMap": true,
         "compileHotReLoad": false,
         "useMultiFrameRuntime": true,
-        "useApiHook": true,
-        "useApiHostProcess": true,
         "babelSetting": {
             "ignore": [],
             "disablePlugins": [],
@@ -34,12 +32,11 @@
         "userConfirmedBundleSwitch": false,
         "packNpmManually": false,
         "packNpmRelationList": [],
-        "minifyWXSS": true
+        "minifyWXSS": true,
+        "condition": false,
+        "ignoreUploadUnusedFiles": true
     },
-    "appid": "wx0acf6dba0233e6dc",
-    "projectname": "little-helper",
-    "libVersion": "2.20.1",
-    "cloudfunctionTemplateRoot": "cloudfunctionTemplate",
+    "cloudfunctionTemplateRoot": "cloudfunctionTemplate/",
     "condition": {
         "search": {
             "list": []
@@ -62,5 +59,18 @@
                 }
             ]
         }
-    }
+    },
+    "compileType": "miniprogram",
+    "srcMiniprogramRoot": "miniprogram/",
+    "editorSetting": {
+        "tabIndent": "insertSpaces",
+        "tabSize": 4
+    },
+    "libVersion": "2.20.1",
+    "packOptions": {
+        "ignore": [],
+        "include": []
+    },
+    "appid": "wx0acf6dba0233e6dc",
+    "projectname": "little-helper"
 }

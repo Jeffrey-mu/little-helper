@@ -26,6 +26,11 @@ Page({
                 link: '/pages/more/barrage/index'
             },
             {
+                label: '分贝检测',
+                icon: 'jianzhuanquan',
+                link: '/pages/more/decibel/index'
+            },
+            {
                 label: '清理缓存',
                 icon: 'qinglihuancun',
                 link: '/pages/more/cache/index'

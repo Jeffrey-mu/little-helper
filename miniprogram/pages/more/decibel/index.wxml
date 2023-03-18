@@ -1,0 +1,3 @@
+<!--pages/more/decibel/index.wxml-->
+<van-circle value="{{ value }}" color="{{ gradientColor }}" text="渐变色" />
+{{db}}
