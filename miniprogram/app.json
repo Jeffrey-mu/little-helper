@@ -1,6 +1,8 @@
 {
     "pages": [
         "pages/index/index",
+        "pages/more/woodenFish/index",
+        "pages/setting/index",
         "pages/more/decibel/index",
         "pages/more/barrage/index",
         "pages/setting/feedback/index",
@@ -8,8 +10,11 @@
         "pages/salary/index",
         "pages/more/workPlan/index",
         "pages/more/index",
-        "pages/more/cache/index",
-        "pages/setting/index"
+        "pages/more/cache/index"
+    ],
+    "requiredBackgroundModes": [
+        "audio",
+        "location"
     ],
     "window": {
         "backgroundColor": "#10C8D1",
@@ -61,6 +66,7 @@
         "van-picker": "@vant/weapp/picker/index",
         "van-stepper": "@vant/weapp/stepper/index",
         "van-slider": "@vant/weapp/slider/index",
-        "van-circle": "@vant/weapp/circle/index"
+        "van-circle": "@vant/weapp/circle/index",
+        "van-overlay": "@vant/weapp/overlay/index"
     }
 }

@@ -27,6 +27,13 @@ Page({
                 loading: false,
                 isCeche: false
             },
+            {
+                label: '电子木鱼',
+                icon: 'muyu1',
+                keys: ['litle:woodenFish:state'],
+                loading: false,
+                isCeche: false
+            },
         ],
         clearAll: false
     },

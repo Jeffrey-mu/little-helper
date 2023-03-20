@@ -18,50 +18,98 @@ Page({
     /**
      * 生命周期函数--监听页面加载
      */
-    onLoad(e) {
-
+    onLoad() {
         const recorderManager = wx.getRecorderManager()
-
+        const innerAudioContext = wx.createInnerAudioContext()
+        const fs = wx.getFileSystemManager()
+        const backgroundAudioManager = wx.getBackgroundAudioManager()
+        const analysisManager = wx.getAnalysisManager()
+        let audioData = {
+            src: '',
+            isPlaying: false
+        }
+        let frameBuffer = []
         recorderManager.onStart(() => {
             console.log('recorder start')
         })
-        recorderManager.onPause(() => {
-            console.log('recorder pause')
-        })
         recorderManager.onStop((res) => {
             console.log('recorder stop', res)
-            const {
-                tempFilePath
-            } = res
-            const backgroundAudioManager = wx.getBackgroundAudioManager()
-            backgroundAudioManager.title = '此时此刻'
-            // 设置了 src 之后会自动播放
-            backgroundAudioManager.src = tempFilePath
-            backgroundAudioManager.play()
+            audioData.src = res.tempFilePath
+            audioData.duration = res.duration
+            audioData.isPlayed = false
+            frameBuffer = []
+            fs.readFile({
+                filePath: res.tempFilePath,
+                success: (res) => {
+                    const buffer = res.data
+                    for (let i = 0; i < buffer.byteLength; i += 2) {
+                        const point = Math.floor((buffer[i + 1] * 256 + buffer[i]) / 32768 * 1000) / 1000;
+                        frameBuffer.push(point)
+                    }
+                    if (frameBuffer.length === 0) {
+                        wx.showToast({
+                            title: '请先录制声音',
+                            icon: 'none'
+                        })
+                        return
+                    }
+                    analysisManager.createAudioContext(backgroundAudioManager)
+                    let freqDomain = new Float32Array(1024)
+                    analysisManager.onFrameEnd((res) => {
+                        freqDomain = res.data
+                        let sum = 0
+                        for (let i = 0; i < freqDomain.length; i++) {
+                            sum += freqDomain[i] * freqDomain[i]
+                        }
+                        const rms = Math.sqrt(sum / freqDomain.length)
+                        const db = 20 * Math.log10(rms / 0.00002)
+                        console.log('decibel:', db)
+                        wx.showToast({
+                            title: '分贝值为：' + db.toFixed(2),
+                            icon: 'none'
+                        })
+                    })
+                    analysisManager.start({
+                        frameSize: 1024,
+                        bufferSize: 4096,
+                        numberOfChannels: 1,
+                        encodeBitRate: 48000,
+                        format: 'pcm'
+                    })
+                    analysisManager.feed(frameBuffer, audioData.duration * 1000)
+                }
+            })
         })
-        recorderManager.onFrameRecorded((res) => {
-            const {
-                frameBuffer
-            } = res
-            console.log('frameBuffer.byteLength', frameBuffer)
+        innerAudioContext.onEnded(() => {
+            audioData.isPlaying = false
+            this.setData({
+                audioData: audioData
+            })
         })
-
-        const options = {
-            duration: 10000,
-            sampleRate: 44100,
-            numberOfChannels: 1,
-            encodeBitRate: 192000,
-            format: 'aac',
-            frameSize: 50
-        }
-
-        recorderManager.start(options)
+        recorderManager.star()
         setTimeout(() => {
             recorderManager.stop()
-            recorderManager.frameRecorded()
-        }, 2000);
-    },
+        }, 3000);
 
+    },
+    playAudio() {
+        if (!audioData.src) {
+            wx.showToast({
+                title: '请先录制声音',
+                icon: 'none'
+            })
+            return
+        }
+        innerAudioContext.src = audioData.src
+        innerAudioContext.play()
+        audioData.isPlaying = true
+        this.setData({
+            audioData: audioData
+        })
+    },
+    detectDecibel() {
+
+    },
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
