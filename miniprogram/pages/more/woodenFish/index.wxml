@@ -1,0 +1,41 @@
+<!--pages/more/woodenFish/index.wxml-->
+<view class="wooden-fish">
+    <view class="tady">
+        {{count}}
+    </view>
+    <view class="operate">
+        <iconfont icon="paiming" size="40" color="#ffffff" bindtap="onClickShow" />
+    </view>
+    <van-overlay show="{{ show }}" bind:click="onClickHide">
+        <view class="wrapper">
+            <view>
+                <text>本次功德：</text><text>{{count}}</text>
+            </view>
+            <view>
+                <text>今日功德：</text><text>{{today}}</text>
+            </view>
+            <view>
+                <text>总功德：</text><text>{{history}}</text>
+            </view>
+        </view>
+    </van-overlay>
+    <view class="tip_box">
+        <view class="count">
+            <view class="text" wx:for="{{list}}" wx:item="item">
+                功德+1
+            </view>
+        </view>
+    </view>
+    <view class="wooden-fish-body">
+
+        <view class="muyu {{active?'muyu_active' : ''}}">
+            <iconfont icon="muyu" size="300" color="#ffffff" bindtap="touch_muyu" class="muyu {{active?'muyu_active' : ''}}" />
+        </view>
+        <view class="auto">
+            <van-switch checked="{{ auto_touch }}" bind:change="onChange" />
+            <view style="margin-left: 20rpx;">自动积功德</view>
+        </view>
+        <!-- <iconfont icon="muyugun" size="250" color="#ffffff"/> -->
+    </view>
+
+</view>

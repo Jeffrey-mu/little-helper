@@ -1,0 +1,94 @@
+/* pages/more/woodenFish/index.wxss */
+.wooden-fish {
+    background-color: #111111;
+    height: 100vh;
+}
+
+.tip_box {
+    position: fixed;
+    bottom: calc(40vh + 150rpx);
+    text-align: right;
+    width: 80vw;
+
+}
+
+.wooden-fish-body {
+    width: 100vw;
+    height: 40vh;
+    position: fixed;
+    bottom: 150rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.muyu {
+    transition: all .2s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.muyu_active {
+    transform: scale(.9);
+}
+
+.count {
+    position: relative;
+    float: right;
+}
+
+.count .text {
+    animation: disappear 1s linear 1;
+    position: absolute;
+    color: #111111;
+    width: 150rpx;
+    top: 0;
+    right: 30rpx;
+    font-size: 40rpx;
+}
+
+@keyframes disappear {
+    0% {
+        top: 0;
+        color: #ffffff
+    }
+
+    100% {
+        top: -150rpx;
+        color: #111111;
+        display: none;
+    }
+}
+
+.tady {
+    font-size: 40rpx;
+    color: #ffffff;
+    text-align: center;
+}
+
+.auto {
+    margin-top: 130rpx;
+    line-height: 50rpx;
+    display: flex;
+    color: #ffffff;
+}
+.operate {
+    position: fixed;
+    top: 70rpx;
+    right: 30rpx;
+}
+.wrapper {
+    width: 70vw;
+    height: 300rpx;
+    margin: auto;
+    border-radius: 30rpx;
+    padding: 40rpx 20rpx;
+    border: 1px solid #ccc;
+}
+.wrapper view {
+    margin: 20rpx;
+    color: #ffffff;
+    font-size: 35rpx;
+}
+.wrapper view text:nth-child(1) {
+    color: #ccc;
+}
