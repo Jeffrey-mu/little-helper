@@ -1,0 +1,10 @@
+<!--pages/chatgpt/index.wxml-->
+<view class="chatgpt_box">
+    <view>
+
+    </view>
+    <view class="footer">
+        <iconfont icon="qingkongbiao" size="50" color="#111" style="margin-right: 20rpx;"/>
+        <van-field style="flex: 1" value="{{ value }}" center clearable border="{{ true }}" bind:input="changeInput" confirm-type="send" />
+    </view>
+</view>

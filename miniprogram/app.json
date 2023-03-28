@@ -10,7 +10,8 @@
         "pages/salary/index",
         "pages/more/workPlan/index",
         "pages/more/index",
-        "pages/more/cache/index"
+        "pages/more/cache/index",
+        "pages/chatgpt/index"
     ],
     "requiredBackgroundModes": [
         "audio",

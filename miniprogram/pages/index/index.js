@@ -5,10 +5,16 @@ Page({
      * 页面的初始数据
      */
     data: {
-        index_menu: [{
+        index_menu: [
+            {
                 label: '工作计划',
                 icon: 'gongzuojihua',
                 link: '/pages/more/workPlan/index'
+            },
+            {
+                label: 'ChatGPT',
+                icon: 'ChatGPT',
+                link: '/pages/chatgpt/index'
             },
             {
                 label: '帮你选',
