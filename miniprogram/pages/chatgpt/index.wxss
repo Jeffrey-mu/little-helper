@@ -1,6 +1,50 @@
-.chatgpt_box{
+.chatgpt_box {
+    background: #ededed;
+    width: 100vw;
+    height: 100vh;
+}
 
+.footer {
+    border-top: #ececec solid 1rpx;
+    background: #f6f6f6;
+    position: fixed;
+    bottom: 0rem;
+    padding: 20rpx 30rpx;
+    padding-bottom: 40rpx;
+    box-sizing: border-box;
+    width: 100vw;
+    display: flex;
 }
-.footer{
-    
+
+.message_box {
+    padding: 20rpx;
+   
 }
+
+.message_item {
+    display: flex;
+    flex: 1;
+}
+
+.message_item_inner {
+    padding: 20rpx;
+    display: inline-block;
+    border-radius: 20rpx;
+    background-color: #ffffff;
+    margin: 20rpx;
+}
+
+.message_item_user .message_item_inner {
+    background-color: #a1dc95;
+    align-self: end;
+}
+
+.message_item_assistant .message_item_inner {
+    max-width: 75%;
+}
+
+.message_item_user {
+    justify-content: flex-end;
+}
+
+.message_item_assistant {}

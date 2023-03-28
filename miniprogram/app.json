@@ -1,6 +1,7 @@
 {
     "pages": [
         "pages/index/index",
+        "pages/chatgpt/index",
         "pages/more/woodenFish/index",
         "pages/setting/index",
         "pages/more/decibel/index",
@@ -10,8 +11,7 @@
         "pages/salary/index",
         "pages/more/workPlan/index",
         "pages/more/index",
-        "pages/more/cache/index",
-        "pages/chatgpt/index"
+        "pages/more/cache/index"
     ],
     "requiredBackgroundModes": [
         "audio",

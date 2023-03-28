@@ -1,13 +1,23 @@
 // pages/chatgpt/index.js
+import {
+    OPEN_API_KEY,
+    baseUrl
+} from '../../config/index'
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-        outPut: '',
-        value: '',
-        dialogue_list: []
+        inputValue: '',
+        loading: {
+            role: 'loding',
+            content: "加载中..."
+        },
+        state: ['assistant', 'user', 'loding'],
+        dialogue_list: [],
+        disabled: false,
+        currentItem: 'bottom'
     },
 
     /**
@@ -16,43 +26,73 @@ Page({
     onLoad(options) {
 
     },
-
+    scroll(e) {
+    },
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
     onReady() {
 
     },
+    clear() {
+        if (this.data.disabled) return
+        this.setData({
+            dialogue_list: []
+        })
+    },
     changeInput(e) {
         this.setData({
-            value: e.detail.value
+            inputValue: e.detail
+        })
+    },
+    confirm(e) {
+        this.setData({
+            disabled: true,
+            dialogue_list: [...this.data.dialogue_list,
+                {
+                    role: this.data.state[1],
+                    content: e.detail,
+                },
+                this.data.loading
+            ],
+            inputValue: ''
+        })
+        this.request(e.detail)
+        this.setData({
+            currentItem: "bottom",
         })
     },
     request(value) {
-        let tath = this
-        let base_path = 'https://jiafengfmc.cn'
-        let OPENAI_API_KEY = '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'
+        let that = this
         wx.request({
-            url: `${base_path}/v1/chat/completions`,
+            url: `${baseUrl}/v1/chat/completions`,
             method: 'POST',
             header: {
                 "Content-Type": "application/json",
-                "Authorization": `Bearer ${OPENAI_API_KEY}`,
+                "Authorization": `Bearer ${OPEN_API_KEY}`,
             },
             data: {
                 model: 'gpt-3.5-turbo',
                 max_tokens: 350,
                 temperature: 0.5,
                 messages: [{
-                    "role": "user",
+                    "role": that.data.state[1],
                     "content": value
                 }]
             },
             success(res) {
-                tath.setData({
-                    outPut: res.data.choices[0].message.content
+                that.setData({
+                    dialogue_list: [...that.data.dialogue_list.slice(0, -1),
+                        {
+                            role: that.data.state[0],
+                            content: res.data.choices[0].message.content
+                        }
+                    ],
+                    disabled: false
                 })
-                console.log(res)
+                that.setData({
+                    currentItem: "bottom",
+                })
             },
         })
     },

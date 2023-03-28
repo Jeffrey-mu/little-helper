@@ -51,21 +51,21 @@ Page({
         })
     },
     inputChange(e) {
-        wx.request({
-            method: 'GET',
-            url: "http://101.42.50.148:3000/verification?content=" + e.detail,
-            header: { "Content-Type": "application/json" },
-            success: (res) => {
-                if (res.errcode !== 0) {
-                    wx.showToast({
-                      title: '内容违规',
-                    })
-                }
-            },
-            error: res => {
-                console.log(res);
-            }
-          });
+        // wx.request({
+            // method: 'GET',
+        //     url: "http://101.42.50.148:3000/verification?content=" + e.detail,
+        //     header: { "Content-Type": "application/json" },
+        //     success: (res) => {
+        //         if (res.errcode !== 0) {
+        //             wx.showToast({
+        //               title: '内容违规',
+        //             })
+        //         }
+        //     },
+        //     error: res => {
+        //         console.log(res);
+        //     }
+        //   });
           
         const index = e.currentTarget.dataset.index;
         const value = e.detail;

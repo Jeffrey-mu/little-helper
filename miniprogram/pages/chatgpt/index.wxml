@@ -1,10 +1,18 @@
 <!--pages/chatgpt/index.wxml-->
 <view class="chatgpt_box">
-    <view>
+    <view class="message_box">
+        <scroll-view class="scroll-view_H" scroll-y="true" scroll-into-view="item-{{currentItem}}" bindscroll="scroll" style=" height: calc(100vh - 150rpx);" scroll-with-animation="{{true}}">
+            <view class="message_item message_item_{{item.role}}" wx:for="{{dialogue_list}}" wx:item="item">
+                <view class="message_item_inner">
+                    {{item.content}}
+                </view>
+            </view>
+            <view id="item-bottom" class="content__gutter--bottom"></view>
+        </scroll-view>
 
     </view>
     <view class="footer">
-        <iconfont icon="qingkongbiao" size="50" color="#111" style="margin-right: 20rpx;"/>
-        <van-field style="flex: 1" value="{{ value }}" center clearable border="{{ true }}" bind:input="changeInput" confirm-type="send" />
+        <iconfont bindtap="clear" icon="qingkongbiao" size="50" color="#111" style="margin-right: 20rpx;" />
+        <van-field style="flex: 1" value="{{ inputValue }}" center clearable border="{{ true }}" disabled="{{disabled}}" bind:input="changeInput" bind:confirm="confirm" confirm-type="send" />
     </view>
 </view>
