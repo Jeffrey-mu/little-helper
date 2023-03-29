@@ -1,0 +1,5 @@
+<!--pages/prompt/index.wxml-->
+
+<view class="prompt">
+    <prompt_item wx:for="{{prompt_list}}" wx:item="item" prompt="{{item}}" wx:key="index" active="{{active}}" bind:change="handleClick" />
+</view>

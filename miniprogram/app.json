@@ -2,6 +2,7 @@
     "pages": [
         "pages/index/index",
         "pages/chatgpt/index",
+        "pages/prompt/index",
         "pages/more/woodenFish/index",
         "pages/setting/index",
         "pages/more/decibel/index",
@@ -28,7 +29,8 @@
     },
     "tabBar": {
         "custom": true,
-        "list": [{
+        "list": [
+            {
                 "pagePath": "pages/index/index",
                 "text": "首页"
             },
@@ -66,6 +68,7 @@
         "van-stepper": "@vant/weapp/stepper/index",
         "van-slider": "@vant/weapp/slider/index",
         "van-circle": "@vant/weapp/circle/index",
-        "van-overlay": "@vant/weapp/overlay/index"
+        "van-overlay": "@vant/weapp/overlay/index",
+        "van-nav-bar": "@vant/weapp/nav-bar/index"
     }
 }

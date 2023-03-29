@@ -1,0 +1,11 @@
+<!-- components/prompt/index.wxml -->
+<view class="role bg-{{prompt.title}}">
+    <view class="role__avatar ">
+    <view class="scale-appear"></view>
+    </view>
+    <view class="role__title">{{prompt.title}}</view>
+    <view class="role__footer">
+        <view class="role__footer--description">{{prompt.description}}</view>
+        <button  bindtap="onTap" data-prompt="{{prompt}}" class="btn-clear role__footer--btn {{active === prompt.title && 'checked'}}">{{active === prompt.title ? '使用中': '选择 TA' }}</button>
+    </view>
+</view>

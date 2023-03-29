@@ -18,7 +18,12 @@ Page({
         role_types: ['assistant', 'user', 'loding', 'system'],
         dialogue_list: [],
         disabled: false,
-        currentItem: 'bottom'
+        currentItem: 'bottom',
+        title: '小帮手',
+        system: {
+            role: 'system',
+            content: "小帮手"
+        }
     },
 
     /**
@@ -62,6 +67,16 @@ Page({
             currentItem: "bottom",
         })
     },
+    backPage() {
+        wx.switchTab({
+            url: '/pages/index/index',
+        })
+    },
+    goPage() {
+        wx.navigateTo({
+            url: '/pages/prompt/index',
+        })
+    },
     request(value) {
         let {
             role_types
@@ -76,12 +91,15 @@ Page({
             },
             data: {
                 model: 'gpt-3.5-turbo',
-                max_tokens: 350,
-                temperature: 0.5,
-                messages: [{
-                    "role": role_types[1],
-                    "content": value
-                }]
+                // max_tokens: 350,
+                // temperature: 0.5,
+                messages: [
+                    this.data.system,
+                    ...(that.data.dialogue_list.length > 1 ? that.data.dialogue_list.slice(0, -2) : []), {
+                        "role": role_types[1],
+                        "content": value
+                    }
+                ]
             },
             success(res) {
                 that.setData({
@@ -124,7 +142,16 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow() {
-
+        let {
+            prompt
+        } = wx.getStorageSync('litle:prompt:state')
+        this.setData({
+            title: prompt.title,
+            system: {
+                role: 'system',
+                content: prompt.content
+            }
+        })
     },
 
     /**

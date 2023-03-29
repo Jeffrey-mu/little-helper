@@ -1,5 +1,13 @@
 <!-- pages/chatgpt/index.wxml -->
 <view class="chatgpt_box">
+    <van-nav-bar>
+        <view slot="title">
+            <text bindtap="goPage"> {{title}}</text>
+        </view>
+        <view slot="left">
+            <iconfont bindtap="backPage" icon="fanhuijiantou" size="50" color="#111" style="margin-right: 20rpx;" />
+        </view>
+    </van-nav-bar>
     <view class="message_box">
         <scroll-view class="scroll-view_H" scroll-y="true" scroll-into-view="item-{{currentItem}}" bindscroll="scroll" style=" height: calc(100vh - 150rpx);" scroll-with-animation="{{true}}">
             <view class="message_item message_item_{{item.role}}" wx:for="{{dialogue_list}}" wx:item="item">

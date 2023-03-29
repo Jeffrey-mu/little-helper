@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "prompt_item": "../../components/prompt_item/index"
+    },
+    "navigationBarTitleText": "设置角色"
+}
