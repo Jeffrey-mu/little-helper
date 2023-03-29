@@ -41,9 +41,6 @@
     "sitemapLocation": "sitemap.json",
     "lazyCodeLoading": "requiredComponents",
     "usingComponents": {
-        "lucky-wheel": "/miniprogram_npm/@lucky-canvas/mini/lucky-wheel/index",
-        "lucky-grid": "/miniprogram_npm/@lucky-canvas/mini/lucky-grid/index",
-        "slot-machine": "/miniprogram_npm/@lucky-canvas/mini/slot-machine/index",
         "iconfont": "./components/iconfont/index",
         "van-button": "@vant/weapp/button/index",
         "van-field": "@vant/weapp/field/index",

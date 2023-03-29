@@ -19,9 +19,9 @@ Page({
     onLoad: function (options) {
         let {
             value = '霜皮溜雨四十围，黛色参天二千尺。',
-            box_bg_color,
-            color,
-            rolling_speed = 10
+                box_bg_color,
+                color,
+                rolling_speed = 10
         } = wx.getStorageSync('litle:heloer:barrage')
         this.setData({
             color,

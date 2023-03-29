@@ -1,6 +1,5 @@
 {
-  "usingComponents": {},
-  "navigationStyle": "custom",
-
-"pageOrientation":"landscape"
+    "usingComponents": {},
+    "navigationStyle": "custom",
+    "pageOrientation": "landscape"
 }
