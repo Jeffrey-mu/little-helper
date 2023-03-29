@@ -1,8 +1,8 @@
 {
     "pages": [
         "pages/index/index",
-        "pages/chatgpt/index",
         "pages/prompt/index",
+        "pages/chatgpt/index",
         "pages/more/woodenFish/index",
         "pages/setting/index",
         "pages/more/decibel/index",

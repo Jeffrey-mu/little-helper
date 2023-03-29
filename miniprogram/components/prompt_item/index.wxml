@@ -1,11 +1,11 @@
 <!-- components/prompt/index.wxml -->
-<view class="role bg-{{prompt.title}}">
+<view class="role bg-{{prompt.title}}" style="background-image: radial-gradient(circle farthest-corner at 10% 20%, {{prompt.gradient[0]}} 0%, {{prompt.gradient[1]}} 90%);">
     <view class="role__avatar ">
-    <view class="scale-appear"></view>
+        <image src="/images/avatar.jpeg" class="scale-appear" mode="" />
     </view>
     <view class="role__title">{{prompt.title}}</view>
     <view class="role__footer">
         <view class="role__footer--description">{{prompt.description}}</view>
-        <button  bindtap="onTap" data-prompt="{{prompt}}" class="btn-clear role__footer--btn {{active === prompt.title && 'checked'}}">{{active === prompt.title ? '使用中': '选择 TA' }}</button>
+        <button bindtap="onTap" data-prompt="{{prompt}}" class="btn-clear role__footer--btn {{active === prompt.title && 'checked'}}">{{active === prompt.title ? '使用中': '选择 TA' }}</button>
     </view>
 </view>

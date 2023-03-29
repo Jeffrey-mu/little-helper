@@ -9,7 +9,7 @@
         </view>
     </van-nav-bar>
     <view class="message_box">
-        <scroll-view class="scroll-view_H" scroll-y="true" scroll-into-view="item-{{currentItem}}" bindscroll="scroll" style=" height: calc(100vh - 150rpx);" scroll-with-animation="{{true}}">
+        <scroll-view class="scroll-view_H" scroll-y="true" scroll-into-view="item-{{currentItem}}" bindscroll="scroll" style=" height: calc(100vh - 330rpx);" scroll-with-animation="{{true}}">
             <view class="message_item message_item_{{item.role}}" wx:for="{{dialogue_list}}" wx:item="item">
                 <view class="message_item_inner">{{item.content}}</view>
             </view>

@@ -2,5 +2,7 @@
     "usingComponents": {
         "prompt_item": "../../components/prompt_item/index"
     },
-    "navigationBarTitleText": "设置角色"
+    "navigationBarTitleText": "设置角色",
+    "navigationBarBackgroundColor": "#f6f6f6",
+    "navigationBarTextStyle": "black"
 }
