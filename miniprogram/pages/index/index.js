@@ -12,8 +12,8 @@ Page({
                 link: '/pages/more/workPlan/index'
             },
             {
-                label: 'ChatGPT',
-                icon: 'ChatGPT',
+                label: '智能Bot',
+                icon: 'jiqiren',
                 link: '/pages/chatgpt/index'
             },
             {

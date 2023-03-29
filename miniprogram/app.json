@@ -22,12 +22,13 @@
         "backgroundTextStyle": "dark",
         "navigationBarBackgroundColor": "#10C8D1",
         "navigationBarTitleText": "乐趣小帮手",
-        "navigationBarTextStyle": "white"
+        "navigationBarTextStyle": "white",
+        "enablePullDownRefresh": false,
+        "disableScroll": true
     },
     "tabBar": {
         "custom": true,
-        "list": [
-            {
+        "list": [{
                 "pagePath": "pages/index/index",
                 "text": "首页"
             },

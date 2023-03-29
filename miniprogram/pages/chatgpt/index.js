@@ -1,4 +1,5 @@
 // pages/chatgpt/index.js
+let requestTask = null;
 import {
     OPEN_API_KEY,
     baseUrl
@@ -26,8 +27,7 @@ Page({
     onLoad(options) {
 
     },
-    scroll(e) {
-    },
+    scroll(e) {},
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
@@ -64,7 +64,7 @@ Page({
     },
     request(value) {
         let that = this
-        wx.request({
+        requestTask = wx.request({
             url: `${baseUrl}/v1/chat/completions`,
             method: 'POST',
             header: {
@@ -94,6 +94,14 @@ Page({
                     currentItem: "bottom",
                 })
             },
+        })
+    },
+    cancelRequestTask() {
+        if (!requestTask) return
+        requestTask.abort()
+        this.setData({
+            dialogue_list: [...this.data.dialogue_list.slice(0, -1)],
+            disabled: false
         })
     },
     /**

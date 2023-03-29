@@ -1,5 +1,4 @@
 {
-    "usingComponents": {
-    },
-    "navigationBarTitleText": "ChatGPT"
+    "usingComponents": {},
+    "navigationBarTitleText": "智能Bot"
 }
