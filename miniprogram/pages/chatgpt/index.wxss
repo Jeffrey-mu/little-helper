@@ -18,7 +18,7 @@
 
 .message_box {
     padding: 20rpx;
-   
+
 }
 
 .message_item {

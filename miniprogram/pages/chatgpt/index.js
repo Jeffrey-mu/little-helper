@@ -15,7 +15,7 @@ Page({
             role: 'loding',
             content: "加载中..."
         },
-        state: ['assistant', 'user', 'loding'],
+        role_types: ['assistant', 'user', 'loding', 'system'],
         dialogue_list: [],
         disabled: false,
         currentItem: 'bottom'
@@ -50,7 +50,7 @@ Page({
             disabled: true,
             dialogue_list: [...this.data.dialogue_list,
                 {
-                    role: this.data.state[1],
+                    role: this.data.role_types[1],
                     content: e.detail,
                 },
                 this.data.loading
@@ -63,6 +63,9 @@ Page({
         })
     },
     request(value) {
+        let {
+            role_types
+        } = this.data
         let that = this
         requestTask = wx.request({
             url: `${baseUrl}/v1/chat/completions`,
@@ -76,7 +79,7 @@ Page({
                 max_tokens: 350,
                 temperature: 0.5,
                 messages: [{
-                    "role": that.data.state[1],
+                    "role": role_types[1],
                     "content": value
                 }]
             },
@@ -84,7 +87,7 @@ Page({
                 that.setData({
                     dialogue_list: [...that.data.dialogue_list.slice(0, -1),
                         {
-                            role: that.data.state[0],
+                            role: role_types[0],
                             content: res.data.choices[0].message.content
                         }
                     ],
@@ -94,6 +97,19 @@ Page({
                     currentItem: "bottom",
                 })
             },
+            fail: (err) => {
+                if (!baseUrl) {
+                    console.error('尚未配置有效的 baseUrl', baseUrl)
+                }
+                wx.showToast({
+                    icon: 'none',
+                    title: `服务请求错误`,
+                })
+                that.setData({
+                    dialogue_list: [...that.data.dialogue_list.slice(0, -1)],
+                    disabled: false
+                })
+            }
         })
     },
     cancelRequestTask() {

@@ -9,8 +9,8 @@
         </scroll-view>
     </view>
     <view class="footer">
-        <iconfont bindtap="clear" icon="qingkongbiao" size="50" color="#111" style="margin-right: 20rpx;" wx:if="{{!disabled}}"/>
-        <iconfont bindtap="cancelRequestTask" icon="tingzhi" size="50" color="red" style="margin-right: 20rpx;" wx:else/>
+        <iconfont bindtap="clear" icon="qingkongbiao" size="50" color="#111" style="margin-right: 20rpx;" wx:if="{{!disabled}}" />
+        <iconfont bindtap="cancelRequestTask" icon="tingzhi" size="50" color="red" style="margin-right: 20rpx;" wx:else />
         <van-field style="flex: 1" value="{{ inputValue }}" center clearable border="{{ true }}" disabled="{{disabled}}" bind:input="changeInput" bind:confirm="confirm" confirm-type="send" />
     </view>
 </view>
