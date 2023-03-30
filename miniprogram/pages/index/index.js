@@ -1,58 +1,12 @@
 // miniprogram/pages/index/index.js
+import {menu_list} from '../../config/index'
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-        menu_list: [
-            {
-                label: '工作计划',
-                icon: 'gongzuojihua',
-                link: '/pages/more/workPlan/index',
-                color: ['#62CDFF', '#19A7CE']
-            },
-            {
-                label: '智能Bot',
-                icon: 'jiqiren',
-                link: '/pages/chatgpt/index',
-                color: ['#F7DB6A', '#EBB02D']
-            },
-            {
-                label: '帮你选',
-                icon: 'mingzhong',
-                link: '/pages/more/select/index',
-                color: ['#30E3DF', '#0EA293']
-            },
-            {
-                label: '工资计算',
-                icon: 'tubiao',
-                link: '/pages/salary/index',
-                color: ['#B2A4FF', '#AA77FF']
-            },
-            {
-                label: '手持弹幕',
-                icon: 'danmushu',
-                link: '/pages/more/barrage/index',
-                color: ['#A9907E', '#A9907E']
-            },
-            // {
-            //     label: '分贝检测',
-            //     icon: 'jianzhuanquan',
-            //     link: '/pages/more/decibel/index'
-            // },
-            {
-                label: '电子木鱼',
-                icon: 'muyu1',
-                link: '/pages/more/woodenFish/index',
-                color: ['#4D4D4D', '#000000']
-            },
-            // {
-            //     label: '清理缓存',
-            //     icon: 'qinglihuancun',
-            //     link: '/pages/more/cache/index'
-            // },
-        ]
+        menu_list
     },
 
     /**

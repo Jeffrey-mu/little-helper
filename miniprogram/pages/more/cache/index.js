@@ -1,40 +1,13 @@
 // miniprogram/pages/more/cache/index.js
 import Dialog from '@vant/weapp/dialog/dialog';
+import {menu_list} from '../../../config/index'
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-        index_menu: [{
-                label: '工作计划',
-                icon: 'gongzuojihua',
-                keys: ['workPlan'],
-                loading: false,
-                isCeche: false
-            },
-            {
-                label: '帮你选',
-                icon: 'mingzhong',
-                keys: ['eatlist', 'select:active', 'select:tabs'],
-                loading: false,
-                isCeche: false
-            },
-            {
-                label: '手持弹幕',
-                icon: 'danmushu',
-                keys: ['litle:heloer:barrage'],
-                loading: false,
-                isCeche: false
-            },
-            {
-                label: '电子木鱼',
-                icon: 'muyu1',
-                keys: ['litle:woodenFish:state'],
-                loading: false,
-                isCeche: false
-            },
-        ],
+        index_menu: menu_list,
         clearAll: false
     },
 
@@ -61,6 +34,7 @@ Page({
     initIndexMenu() {
         this.setData({
             index_menu: this.data.index_menu.map(item => {
+                item.loading =  false,
                 item.isCeche = this.isCeche(item.keys)
                 return item
             })
