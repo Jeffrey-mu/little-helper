@@ -14,3 +14,4 @@ $RECYCLE.BIN/
 node_modules/
 .env
 miniprogram/config/index.js
+miniprogram_npm/

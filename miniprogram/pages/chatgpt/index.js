@@ -1,9 +1,13 @@
 // pages/chatgpt/index.js
-let requestTask = null;
+import {
+    copyEvent
+} from '../../utils/index'
 import {
     OPEN_API_KEY,
     baseUrl
 } from '../../config/index'
+let requestTask = null;
+
 Page({
 
     /**
@@ -12,10 +16,10 @@ Page({
     data: {
         inputValue: '',
         loading: {
-            role: 'loding',
+            role: 'loading',
             content: "加载中..."
         },
-        role_types: ['assistant', 'user', 'loding', 'system'],
+        role_types: ['assistant', 'user', 'loading', 'system'],
         dialogue_list: [],
         disabled: false,
         currentItem: 'bottom',
@@ -38,6 +42,10 @@ Page({
      */
     onReady() {
 
+    },
+    copyEvent(e) {
+        let value = e.currentTarget.dataset.content
+        copyEvent(value)
     },
     clear() {
         if (this.data.disabled) return
@@ -85,6 +93,7 @@ Page({
         requestTask = wx.request({
             url: `${baseUrl}/v1/chat/completions`,
             method: 'POST',
+            responseType: 'text',
             header: {
                 "Content-Type": "application/json",
                 "Authorization": `Bearer ${OPEN_API_KEY}`,
@@ -130,6 +139,7 @@ Page({
             }
         })
     },
+
     cancelRequestTask() {
         if (!requestTask) return
         requestTask.abort()

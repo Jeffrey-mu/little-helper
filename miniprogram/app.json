@@ -1,8 +1,8 @@
 {
     "pages": [
         "pages/index/index",
-        "pages/prompt/index",
         "pages/chatgpt/index",
+        "pages/prompt/index",
         "pages/more/woodenFish/index",
         "pages/setting/index",
         "pages/more/decibel/index",
@@ -69,6 +69,7 @@
         "van-slider": "@vant/weapp/slider/index",
         "van-circle": "@vant/weapp/circle/index",
         "van-overlay": "@vant/weapp/overlay/index",
-        "van-nav-bar": "@vant/weapp/nav-bar/index"
+        "van-nav-bar": "@vant/weapp/nav-bar/index",
+        "van-loading": "@vant/weapp/loading/index"
     }
 }

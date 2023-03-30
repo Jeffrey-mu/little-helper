@@ -4,6 +4,15 @@
     height: 100vh;
 }
 
+.chatgpt_box--title {
+    font-weight: 500;
+    font-size: 30rpx;
+}
+
+.nav-bar-title {
+    vertical-align: bottom;
+}
+
 .footer {
     border-top: #ececec solid 1rpx;
     background: #f6f6f6;
@@ -23,9 +32,21 @@
 .message_item {
     display: flex;
     flex: 1;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.copy_btn {
+    background-color: #ffffff;
+    padding: 5rpx 20rpx;
+    border-radius: 25rpx;
+    font-size: 25rpx;
+    margin-left: 20rpx;
+    width: fit-content;
 }
 
 .message_item_inner {
+    width: fit-content;
     padding: 20rpx;
     display: inline-block;
     border-radius: 20rpx;
@@ -47,3 +68,21 @@
 }
 
 .message_item_assistant {}
+
+.scale-appear {
+    width: 40rpx;
+    height: 40rpx;
+    animation: enlarge-appear .8s ease-out;
+}
+
+@keyframes enlarge-appear {
+    0% {
+        opacity: 0;
+        transform: scale(75%) rotate(-90deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(100%) rotate(0deg);
+    }
+}
