@@ -1,4 +1,7 @@
 // miniprogram/pages/setting/feedback/index.js
+import {
+    copy,
+} from '../../../utils/index'
 Page({
 
     /**
@@ -16,17 +19,10 @@ Page({
 
     },
     copyEvent() {
-        wx.setClipboardData({
-            data: this.data.email,
-            success: () => {
-                wx.showToast({
-                    title: '复制成功',
-                    icon: 'none'
-                })
-                this.setData({
-                    state: 1
-                })
-            }
+        copy(this.data.email).then(res => {
+            this.setData({
+                state: 1
+            })
         })
     },
     /**

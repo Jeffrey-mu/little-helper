@@ -2,5 +2,5 @@
 .prompt {
     overflow: auto;
     height: 100vh;
-    padding: 20rpx;
+    padding: 30rpx;
 }

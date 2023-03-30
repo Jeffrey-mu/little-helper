@@ -22,7 +22,7 @@ Page({
             },
             {
                 label: '手持弹幕',
-                icon: 'danmu',
+                icon: 'danmushu',
                 keys: ['litle:heloer:barrage'],
                 loading: false,
                 isCeche: false

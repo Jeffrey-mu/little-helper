@@ -1,10 +1,71 @@
 /* miniprogram/pages/index/index.wxss */
+
 .flex {
     display: flex;
     justify-content: center;
     margin-top: 200rpx;
 }
-.more {
+
+.home_page {
     margin-top: 10px;
     padding: 10rpx;
+}
+
+.header {
+    padding-top: 150rpx;
+    margin-bottom: 50rpx;
+    text-align: center;
+}
+
+.header .title {
+    font-size: 50rpx;
+    font-weight: 500;
+}
+
+.header .des {
+    font-size: 30rpx;
+    color: #adabab;
+}
+
+.menu {
+    height: 70vh;
+    overflow: auto;
+    box-sizing: border-box;
+    padding: 0 40rpx;
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    text-align: center;
+    height: 1000rpx;
+}
+
+.menu_item {
+    padding: 50rpx 0;
+    width: 46%;
+    border-radius: 20rpx;
+    color: #ffffff;
+    font-weight: 500;
+    height: 300rpx;
+    box-sizing: border-box;
+}
+
+/* .menu_item:last-child {
+    width: 100%;
+} */
+.icon_box {
+    width: 130rpx;
+    display: flex;
+    justify-content: center;
+    height: 130rpx;
+    background-color: #ffffff;
+    margin: auto;
+    border-radius: 50%;
+    margin-bottom: 20rpx;
+    padding-top: 20rpx;
+    box-sizing: border-box;
+}
+
+.label {
+    font-size: 30rpx;
 }

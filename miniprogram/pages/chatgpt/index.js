@@ -1,11 +1,14 @@
 // pages/chatgpt/index.js
 import {
-    copyEvent
+    copy,
 } from '../../utils/index'
 import {
     OPEN_API_KEY,
     baseUrl
 } from '../../config/index'
+import showdown from 'showdown'
+// 创建转换器
+const converter = new showdown.Converter();
 let requestTask = null;
 
 Page({
@@ -21,9 +24,11 @@ Page({
         },
         role_types: ['assistant', 'user', 'loading', 'system'],
         dialogue_list: [],
+        original_dialogue_list: [],
         disabled: false,
         currentItem: 'bottom',
         title: '小帮手',
+        prompt: {},
         system: {
             role: 'system',
             content: "小帮手"
@@ -44,13 +49,17 @@ Page({
 
     },
     copyEvent(e) {
-        let value = e.currentTarget.dataset.content
-        copyEvent(value)
+        let {
+            index
+        } = e.currentTarget.dataset
+
+        copy(this.data.original_dialogue_list[index])
     },
     clear() {
         if (this.data.disabled) return
         this.setData({
-            dialogue_list: []
+            dialogue_list: [],
+            original_dialogue_list: []
         })
     },
     changeInput(e) {
@@ -58,15 +67,36 @@ Page({
             inputValue: e.detail
         })
     },
+    start_continuous() {
+        let messages = []
+        if (this.is_continuous()) {
+            messages = (this.data.dialogue_list.length > 1 ? this.data.dialogue_list.slice(0, -2) : []) || []
+        }
+        if (messages.length) {
+            messages.map((item, index) => {item.content = this.data.original_dialogue_list[index]})
+        }
+        return messages
+    },
+    is_continuous() {
+        return this.data.prompt.continuation
+    },
     confirm(e) {
+        if (!e.detail) {
+            return
+        }
         this.setData({
             disabled: true,
-            dialogue_list: [...this.data.dialogue_list,
+            dialogue_list: [
+                ...this.data.dialogue_list,
                 {
                     role: this.data.role_types[1],
                     content: e.detail,
                 },
                 this.data.loading
+            ],
+            original_dialogue_list: [
+                ...this.data.original_dialogue_list,
+                e.detail,
             ],
             inputValue: ''
         })
@@ -89,7 +119,7 @@ Page({
         let {
             role_types
         } = this.data
-        let that = this
+
         requestTask = wx.request({
             url: `${baseUrl}/v1/chat/completions`,
             method: 'POST',
@@ -104,36 +134,49 @@ Page({
                 // temperature: 0.5,
                 messages: [
                     this.data.system,
-                    ...(that.data.dialogue_list.length > 1 ? that.data.dialogue_list.slice(0, -2) : []), {
+                    ...this.start_continuous(),
+                    {
                         "role": role_types[1],
                         "content": value
                     }
                 ]
             },
-            success(res) {
-                that.setData({
-                    dialogue_list: [...that.data.dialogue_list.slice(0, -1),
+            success: (res) => {
+                this.setData({
+                    dialogue_list: [... this.data.dialogue_list.slice(0, -1),
                         {
                             role: role_types[0],
-                            content: res.data.choices[0].message.content
+                            content: converter.makeHtml(res.data.choices[0].message.content)
                         }
+                    ],
+                    original_dialogue_list: [
+                        ...this.data.original_dialogue_list,
+                        res.data.choices[0].message.content
                     ],
                     disabled: false
                 })
-                that.setData({
+                this.setData({
                     currentItem: "bottom",
                 })
             },
             fail: (err) => {
+                console.log(err);
                 if (!baseUrl) {
                     console.error('尚未配置有效的 baseUrl', baseUrl)
                 }
-                wx.showToast({
-                    icon: 'none',
-                    title: `服务请求错误`,
-                })
-                that.setData({
-                    dialogue_list: [...that.data.dialogue_list.slice(0, -1)],
+                if (err.errMsg === 'request:fail abort') {
+                    wx.showToast({
+                        icon: 'none',
+                        title: `取消请求`,
+                    })
+                } else {
+                    wx.showToast({
+                        icon: 'none',
+                        title: `服务请求错误`,
+                    })
+                }
+                this.setData({
+                    dialogue_list: [...this.data.dialogue_list.slice(0, -1)],
                     disabled: false
                 })
             }
@@ -143,24 +186,21 @@ Page({
     cancelRequestTask() {
         if (!requestTask) return
         requestTask.abort()
-        this.setData({
-            dialogue_list: [...this.data.dialogue_list.slice(0, -1)],
-            disabled: false
-        })
     },
     /**
      * 生命周期函数--监听页面显示
      */
     onShow() {
         let {
-            prompt
+            prompt = {}
         } = wx.getStorageSync('litle:prompt:state')
         this.setData({
             title: prompt.title,
             system: {
                 role: 'system',
-                content: prompt.content
-            }
+                content: prompt.content || ''
+            },
+            prompt
         })
     },
 

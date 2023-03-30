@@ -38,7 +38,7 @@ Page({
         if (typeof this.getTabBar === 'function' && this.getTabBar()) {
             this.getTabBar().setData({
                 // 当前页面的 tabBar 索引
-                active: 3
+                active: 1
             })
         }
     },

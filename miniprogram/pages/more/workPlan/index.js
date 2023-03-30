@@ -1,4 +1,7 @@
 // miniprogram/pages/more/workPlan/index.js
+import {
+    copy,
+} from './../../../utils/index'
 Page({
 
     /**
@@ -26,21 +29,13 @@ Page({
     },
     copyEvent() {
         let workPlan = [this.data.title, ...this.data.workList]
-        wx.setClipboardData({
-            data: workPlan.map((item, index) => (index ? index + '、' + item : item)).filter(item => item)
-                .join('\n'),
-            success: () => {
-                wx.showToast({
-                    title: '复制成功',
-                    icon: 'none'
-                })
-                wx.setStorageSync('workPlan', this.data.workList)
-                this.setData({
-                    state: 1
-                })
-            }
+        copy(workPlan.map((item, index) => (index ? index + '、' + item : item)).filter(item => item)
+            .join('\n')).then(res => {
+            wx.setStorageSync('workPlan', this.data.workList)
+            this.setData({
+                state: 1
+            })
         })
-
     },
     addEvent() {
         this.setData({
@@ -52,7 +47,7 @@ Page({
     },
     inputChange(e) {
         // wx.request({
-            // method: 'GET',
+        // method: 'GET',
         //     url: "http://101.42.50.148:3000/verification?content=" + e.detail,
         //     header: { "Content-Type": "application/json" },
         //     success: (res) => {
@@ -66,7 +61,7 @@ Page({
         //         console.log(res);
         //     }
         //   });
-          
+
         const index = e.currentTarget.dataset.index;
         const value = e.detail;
         const items = this.data.workList;

@@ -3,8 +3,8 @@
     <van-tabbar-item icon="home-o" url="/pages/index/index" link-type="switchTab">
         首页
     </van-tabbar-item>
-    <van-tabbar-item icon="search">搜索</van-tabbar-item>
-    <van-tabbar-item icon="friends-o">标签3</van-tabbar-item>
+    <!-- <van-tabbar-item icon="search">搜索</van-tabbar-item>
+    <van-tabbar-item icon="friends-o">标签3</van-tabbar-item> -->
     <van-tabbar-item icon="contact" url="/pages/setting/index" link-type="switchTab">
         设置
     </van-tabbar-item>

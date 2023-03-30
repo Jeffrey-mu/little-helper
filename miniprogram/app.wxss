@@ -45,3 +45,18 @@ view {
   display: flex;
   justify-content: center;
 }
+.scale-appear {
+    animation: enlarge-appear .8s ease-out;
+}
+
+@keyframes enlarge-appear {
+    0% {
+        opacity: 0;
+        transform: scale(75%) rotate(-90deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(100%) rotate(0deg);
+    }
+}

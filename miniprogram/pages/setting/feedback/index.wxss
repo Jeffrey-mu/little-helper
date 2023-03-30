@@ -23,7 +23,7 @@
 }
 
 .copy_success {
-    background: rgba(10, 168, 81, 0.904);
+    background: #5F8D4E;
 }
 
 .title {

@@ -2,7 +2,9 @@
 <view class="chatgpt_box">
     <van-nav-bar>
         <view slot="title" class="nav-bar-title">
-            🧑‍🎨 <text bindtap="goPage" class="chatgpt_box--title"> {{title}}</text><van-icon name="arrow" />
+             <view bindtap="goPage" >
+                <text class="chatgpt_box--title">🧑‍🎨 {{title}}</text><van-icon name="arrow" />
+             </view>
         </view>
         <view slot="left">
             <iconfont bindtap="backPage" icon="fanhuijiantou" size="50" color="#111" style="margin-right: 20rpx;" />
@@ -10,14 +12,18 @@
     </van-nav-bar>
     <view class="message_box">
         <scroll-view class="scroll-view_H" scroll-y="true" scroll-into-view="item-{{currentItem}}" bindscroll="scroll" style=" height: calc(100vh - 330rpx);" scroll-with-animation="{{true}}">
-            <view class="message_item message_item_{{item.role}}" wx:for="{{dialogue_list}}" wx:item="item">
+            <view class="message_item message_item_{{item.role}}" wx:for="{{dialogue_list}}">
                 <view class="message_item_inner">
                     <van-loading wx:if="{{item.role === 'loading'}}" size="35rpx"></van-loading>
+                    <block wx:elif="{{item.role === 'assistant'}}">
+                    <rich-text nodes="{{item.content}}"></rich-text>
+                        <!-- <wemark :md="{{item.content}}" link highlight type="wemark"></wemark> -->
+                    </block>
                     <block wx:else>
                         {{item.content}}
                     </block>
                 </view>
-                <view class="copy_btn" wx:if="{{item.role === 'assistant'}}" bindtap="copyEvent" data-content="{{item.content}}">
+                <view class="copy_btn" wx:if="{{item.role === 'assistant'}}" bindtap="copyEvent" data-index="{{index}}">
                     <iconfont class="copy" icon="{{state ? 'chenggongfuzhi' : 'copy'}}" size="30" color="{{state ? 'rgba(10, 168, 81, 0.904)' : '#555'}}" /> 复制
                 </view>
             </view>

@@ -3,7 +3,6 @@
     width: 100vw;
     height: 100vh;
 }
-
 .chatgpt_box--title {
     font-weight: 500;
     font-size: 30rpx;
@@ -30,10 +29,8 @@
 }
 
 .message_item {
+    overflow: auto;
     display: flex;
-    flex: 1;
-    flex-direction: column;
-    justify-content: flex-start;
 }
 
 .copy_btn {
@@ -60,6 +57,7 @@
 }
 
 .message_item_assistant .message_item_inner {
+
     max-width: 75%;
 }
 
@@ -67,7 +65,12 @@
     justify-content: flex-end;
 }
 
-.message_item_assistant {}
+.message_item_assistant {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: flex-start;
+}
 
 .scale-appear {
     width: 40rpx;
