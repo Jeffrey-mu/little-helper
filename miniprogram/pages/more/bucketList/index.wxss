@@ -1,0 +1,18 @@
+/* pages/more/bucketList/index.wxss */
+.bucket_list {}
+
+.bucket_list_content {
+    padding: 20rpx;
+    display: flex;
+    gap: 20rpx;
+    flex-wrap: wrap;
+}
+
+.bucket_list_content_item {
+    padding: 5rpx 10rpx;
+}
+.bucket_list_content_item_active {
+    background-color: #FA7D09;
+    color: #ffffff;
+
+}

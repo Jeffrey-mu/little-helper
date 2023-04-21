@@ -1,6 +1,7 @@
 {
     "pages": [
         "pages/index/index",
+        "pages/more/bucketList/index",
         "pages/chatgpt/index",
         "pages/prompt/index",
         "pages/more/woodenFish/index",

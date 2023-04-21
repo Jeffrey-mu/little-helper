@@ -1,0 +1,8 @@
+<!--pages/more/bucketList/index.wxml-->
+<view class="bucket_list">
+    <view class="bucket_list_content">
+        <view wx:for="{{bucketList}}" class="bucket_list_content_item {{item.flag === 1 ? 'bucket_list_content_item_active' : ''}}" bindtap="handleItem" data-index="{{index}}">
+            {{item.name}}
+        </view>
+    </view>
+</view>

@@ -8,7 +8,9 @@
 
 .home_page {
     margin-top: 10px;
-    padding: 10rpx;
+    height: auto;
+    height: 75vh;
+
 }
 
 .header {
@@ -27,26 +29,37 @@
     color: #adabab;
 }
 
-.menu {
+.menu,
+swiper,
+swiper-item {
     height: 70vh;
-    overflow: auto;
     box-sizing: border-box;
+    overflow: auto;
     padding: 0 40rpx;
     display: flex;
     width: 100%;
     flex-wrap: wrap;
+    gap: 20rpx;
     justify-content: space-between;
     text-align: center;
-    height: 1000rpx;
+    /* height: 1000rpx; */
+}
+
+.menu {
+    padding: 0;
+}
+
+swiper {
+    padding: 0;
 }
 
 .menu_item {
-    padding: 50rpx 0;
-    width: 46%;
-    border-radius: 20rpx;
+    padding: 40rpx 0;
+    width: 47%;
+    border-radius: 60rpx;
     color: #ffffff;
     font-weight: 500;
-    height: 300rpx;
+    height: 320rpx;
     box-sizing: border-box;
 }
 
@@ -68,4 +81,5 @@
 
 .label {
     font-size: 30rpx;
+    margin-top: 50rpx;
 }

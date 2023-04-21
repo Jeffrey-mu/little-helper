@@ -1,18 +1,23 @@
 // miniprogram/pages/index/index.js
-import {menu_list} from '../../config/index'
+import {
+    menu_list
+} from '../../config/index'
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-        menu_list
+        menu_list: [], 
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
+        this.setData({
+            menu_list: this.groupByCount(menu_list, 6)
+        })
         wx.cloud.callFunction({
             name: 'quickstartFunctions',
             config: {
@@ -23,7 +28,20 @@ Page({
             }
         }).then((resp) => {})
     },
+    groupByCount(arr, count) {
+        const groups = [];
+        let groupIndex = -1;
 
+        for (let i = 0; i < arr.length; i++) {
+            if (i % count === 0) {
+                groupIndex++;
+                groups[groupIndex] = [];
+            }
+            groups[groupIndex].push(arr[i]);
+        }
+
+        return groups;
+    },
     /**
      * 生命周期函数--监听页面初次渲染完成
      */

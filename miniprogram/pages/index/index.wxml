@@ -9,14 +9,22 @@
     </view>
 
     <view class="menu">
-        <navigator class="menu_item" style="background-image: radial-gradient(circle farthest-corner at 10% 20%, {{item.color[0]}} 0%, {{item.color[1]}} 90%);" wx:for="{{menu_list}}" wx:for-item="item" wx:key="index" url="{{item.link}}">
-            <view class="icon_box scale-appear">
-                <iconfont icon="{{item.icon}}" size="80" color="{{item.color[0]}}" />
-            </view>
-            <view class="label">
-             {{item.label}}
-            </view>
-        </navigator>
+        <swiper indicator-dots="{{true}}" autoplay="{{false}}" interval="{{2000}}" duration="{{500}}">
+            <block wx:for="{{menu_list}}" wx:for-item="group_item" wx:key="index">
+                <swiper-item>
+                    <navigator class="menu_item" style="background-image: radial-gradient(circle farthest-corner at 10% 20%, {{item.color[0]}} 0%, {{item.color[1]}} 90%);" wx:for="{{group_item}}" wx:for-item="item" wx:key="{{item.color[0]}}" url="{{item.link}}">
+                        <view class="icon_box scale-appear">
+                            <iconfont icon="{{item.icon}}" size="80" color="{{item.color[0]}}" />
+                        </view>
+                        <view class="label">
+                            {{item.label}}
+                        </view>
+                    </navigator>
+                </swiper-item>
+            </block>
+
+        </swiper>
+
     </view>
     <view class="footer"></view>
 </view>
