@@ -1,18 +1,30 @@
 /* pages/more/bucketList/index.wxss */
-.bucket_list {}
+.bucket_list {
+    padding: 20rpx;
+    height: 100vh;
+}
 
 .bucket_list_content {
-    padding: 20rpx;
+    height: auto;
+    overflow: auto;
     display: flex;
-    gap: 20rpx;
+    gap: 10rpx;
     flex-wrap: wrap;
 }
 
 .bucket_list_content_item {
     padding: 5rpx 10rpx;
+    font-size: 28rpx;
+    border-radius: 10rpx;
 }
-.bucket_list_content_item_active {
-    background-color: #FA7D09;
-    color: #ffffff;
 
+.bucket_list_content_item_active {
+    color: #FA7D09;
+    background-color: #fa7d0938;
+    font-weight: 600;
+}
+
+.bucket_list_header_title {
+    color: #ffffff;
+    flex: 1;
 }

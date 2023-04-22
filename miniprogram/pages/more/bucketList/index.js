@@ -12,12 +12,18 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad(options) {
-        this.setData({
-            bucketList: this.data.bucketList.map(item => ({
-                name: item,
-                flag: 0
-            }))
-        })
+        if (wx.getStorageSync('more:bucketList:state')) {
+            this.setData({
+                bucketList: wx.getStorageSync('more:bucketList:state')
+            })
+        } else {
+            this.setData({
+                bucketList: this.data.bucketList.map(item => ({
+                    name: item,
+                    flag: 0
+                }))
+            })
+        }
     },
     handleItem(e) {
         console.log(e);
@@ -30,21 +36,22 @@ Page({
         this.setData({
             bucketList: this.data.bucketList
         })
+        this.saveData()
     },
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
     onReady() {
-
+     
     },
 
     /**
      * 生命周期函数--监听页面显示
      */
-    onShow() {
-
+    onShow() {},
+    saveData() {
+        wx.setStorageSync('more:bucketList:state', this.data.bucketList)
     },
-
     /**
      * 生命周期函数--监听页面隐藏
      */
@@ -56,7 +63,7 @@ Page({
      * 生命周期函数--监听页面卸载
      */
     onUnload() {
-
+        this.saveData()
     },
 
     /**
