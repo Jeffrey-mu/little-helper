@@ -1,8 +1,44 @@
 <!--pages/more/bucketList/index.wxml-->
 <view class="bucket_list">
+
     <view class="bucket_list_content">
-        <view wx:for="{{bucketList}}" class="bucket_list_content_item {{item.flag === 1 ? 'bucket_list_content_item_active' : ''}}" bindtap="handleItem" data-index="{{index}}">
+        <view class="bucket_list_title" bindtap="open_popup">
+            <view>
+                {{
+                bucketList[active].title
+                }}
+                <text style="color: rgba(187, 184, 184, 1); padding-right: 10rpx; font-size: 25rpx; font-weight: 400;"> (<text style="color: #FA7D09; font-size: 30rpx;">{{ bucketList[active].selected }}</text>/{{ bucketList[active].list.length }})</text>
+            </view>
+            <iconfont icon="qiehuan" size="28" color="#FA7D09" />
+        </view>
+       <view class="bucket_list_content_box">
+        <view wx:for="{{bucketList[active].list}}" class="bucket_list_content_item {{item.flag === 1 ? 'bucket_list_content_item_active' : ''}}" bindtap="handleItem" data-index="{{index}}" wx:key="index">
             {{item.name}}
         </view>
+       </view>
     </view>
+    <van-popup custom-style="background-color:red" show="{{ show }}" position="right" custom-style="height: 100%;width: 80%" bind:close="onClose" wx:key="index">
+        <view class="bucket_list_popup_box">
+            <view wx:for="{{bucketList}}" class="bucket_list_popup_item">
+                <view class="left">
+                    <view class="title">
+                        {{item.title}}
+                    </view>
+                </view>
+                <view class="preview">
+                    <block wx:for="{{6}}" wx:for-item="inner">
+                        {{item.list[inner].name}}
+                    </block>
+                </view>
+                <view class="bottom">
+                    <view class="count">
+                        <text style="color: #FA7D09;"> {{ item.selected }} </text>
+                        /
+                        <text style="color: rgba(187, 184, 184, 1)"> {{ item.list.length }}</text>
+                    </view>
+                    <text class="btn {{index === active ? 'active_btn' : ''}}" bindtap="choose" data-index="{{index}}">{{index === active ? '已选择' : '选 择'}}</text>
+                </view>
+            </view>
+        </view>
+    </van-popup>
 </view>

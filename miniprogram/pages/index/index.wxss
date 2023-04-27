@@ -32,7 +32,7 @@
 .menu,
 swiper,
 swiper-item {
-    height: 70vh;
+    height: 65vh;
     box-sizing: border-box;
     overflow: auto;
     padding: 0 40rpx;
@@ -42,7 +42,6 @@ swiper-item {
     gap: 20rpx;
     justify-content: space-between;
     text-align: center;
-    /* height: 1000rpx; */
 }
 
 .menu {

@@ -1,6 +1,6 @@
 {
     "usingComponents": {},
-    "navigationBarTitleText": "人生已完成清单",
+    "navigationBarTitleText": "人生清单",
      "backgroundColor": "#ffffff",
-     "navigationBarBackgroundColor": "#FA7D09"
+     "navigationBarBackgroundColor": "#FF9A2E"
 }

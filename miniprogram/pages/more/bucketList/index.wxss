@@ -2,14 +2,28 @@
 .bucket_list {
     padding: 20rpx;
     height: 100vh;
+
 }
 
 .bucket_list_content {
+    background: rgba(244, 238, 238, 0.3);
+    box-shadow: 0 2rpx 10rpx 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4rpx);
+    -webkit-backdrop-filter: blur(4rpx);
+    border-radius: 20rpx;
     height: auto;
-    overflow: auto;
+    max-height: 100vh;
+    padding: 10rpx;
     display: flex;
-    gap: 10rpx;
     flex-wrap: wrap;
+    padding-bottom: 20rpx;
+}
+.bucket_list_content_box {
+    display: flex;
+    flex-wrap: wrap;
+    max-height: calc(100vh - 180rpx);
+    overflow: auto;
+    gap: 10rpx;
 }
 
 .bucket_list_content_item {
@@ -19,12 +33,89 @@
 }
 
 .bucket_list_content_item_active {
-    color: #FA7D09;
-    background-color: #fa7d0938;
+    color: #FF9A2E;
+    background-color: #FFE4BA;
+    font-weight: 600;
+    transition: all .1s;
+}
+
+.bucket_list_title {
+    width: 100%;
+    height: 70rpx;
+    line-height: 70rpx;
+    color: #FF9A2E;
+    text-align: center;
+    font-size: 28rpx;
+    font-weight: 600;
+    margin-bottom: 20rpx;
+    border-bottom: 5rpx #FF9A2E solid;
+    display: flex;
+    justify-content: space-between;
+    padding:0 20rpx;
+}
+
+.bucket_list_popup_box {
+    height: 100%;
+    background-color: #e8e8e8;
+    padding: 20rpx;
+    display: flex;
+    flex-direction: column;
+    gap: 30rpx;
+    box-sizing: border-box;
+}
+
+.bucket_list_popup_item {
+    transition: all .1s;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    box-shadow: 20rpx 20rpx 30rpx rgba(0, 0, 0, .05);
+    border-radius: 10rpx;
+    border: 1rpx solid rgba(255, 255, 255, 0.18);
+    height: 250rpx;
+    padding: 20rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.bucket_list_popup_item .left .title {
     font-weight: 600;
 }
 
-.bucket_list_header_title {
+.bucket_list_popup_item .bottom .count {
+    font-size: 25rpx;
+    color: #777;
+    display: flex;
+    width: 150rpx;
+    justify-content: start;
+    margin-top: 20rpx;
+}
+
+.bucket_list_popup_item .bottom {
+    display: flex;
+    justify-content: space-between;
+    padding: 10rpx 20rpx;
+    border-radius: 10rpx;
+}
+
+.bucket_list_popup_item .btn {
+    padding: 10rpx 20rpx;
+    background-color: #f1ecec;
+    border-radius: 10rpx;
+    font-weight: 600;
+}
+
+.bucket_list_popup_item .preview {
+    display: flex;
+    gap: 10rpx;
+    flex-wrap: wrap;
+    justify-content: start;
+    font-size: 25rpx;
+    color: #3a3a3a;
+}
+
+.bucket_list_popup_item .active_btn {
     color: #ffffff;
-    flex: 1;
+    background-color: #FFB65D;
+    transition: all .1s;
 }
